@@ -1,0 +1,1307 @@
+﻿@{
+    ViewBag.Title = "Admin";
+    try
+    {
+        Layout = Session[Constances.sLayoutPath].ToString();
+    }
+    catch (Exception ex)
+    {
+        Url.Action("Login", "Home");
+    }
+}
+<script src="~/Content/Canvas/BitmapLib.js"></script>
+<script src="~/Content/Canvas/BitmapLib2.js"></script>
+<script src="~/Content/Canvas/BitmapLib3.js"></script>
+<script src="~/Content/Canvas/BitmapLibManBody.js"></script>
+<script src="~/Content/Canvas/BitmapHumanIcon.js"></script>
+<script src="~/Content/Canvas/BitmapLibFemaleBody.js"></script>
+<script src="~/Content/Canvas/BitmapAdmin.js"></script>
+<script src="~/Content/Canvas/RenderAdminCanvas.js"></script>
+<script src="~/Content/Canvas/HelpLib.js"></script>
+@using WebResources;
+@using Common;
+
+<style>
+    body {
+        background-color:#191F26;
+    }
+</style>
+
+<div class="canvasBox" ng-cloak ng-controller="AdminController" block-ui="BlockUI">
+    <div class="row" ng-show="!isLoaded">
+        <div class="col-xs-12 col-md-12 col-lg-12 padd0 text-center" style="height: 400px; background: #191F26 url(../Content/Canvas/loadin1.gif) no-repeat center;">
+        </div>
+    </div>
+    <div class="row" ng-show="isLoaded">
+        <table border="0">
+            <tr>
+                <td width="200" align="left" valign="top">
+                    <canvas id="myMenuCanvas" height="600" width="200"></canvas>
+                </td>
+                <td align="left" valign="top">
+                    <canvas id="mySceneCanvas" height="600" width="200" ng-show="!isUserOn && !isSettingOn && !isGroupOn && !isHelpOn"></canvas>
+
+                    <div class="col-xs-12 col-md-12 col-lg-12 padd0" ng-show="isUserOn">
+                        <div class="col-xs-12 col-md-12 col-lg-12 padd0" style="height: 40px; background-image: url('../Content/Canvas/CaptureHeader.PNG'); ">
+                            <div class="col-xs-12 col-md-12 col-lg-12 text-right">
+                                <span class="btn btn-success btn-sm" title="Edit" ng-click="onAddUser();" style="margin-top: 5px; margin-right: 10px;"><i class="fa fa-plus" style="padding-right: 5px;"></i>New User</span>
+                            </div>
+                            
+                        </div>
+                        <div class="col-xs-12 col-md-12 col-lg-12 padd0">
+                            <div class="col-xs-12 col-md-12 col-lg-12 " style="padding-left: 10px; padding-top: 10px; padding-right: 20px; padding-bottom: 20px;">
+                                <div class="container-fluid">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-10">
+                                        
+
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-10">
+                                        <table class="table table-striped table-bordered table-hover" block-ui="frmBlockUI">
+
+                                            <thead>
+                                                <tr>
+                                                    <th style="width:150px;">Username</th>
+                                                    <th style="width:150px;">Password</th>
+                                                    <th style="width:200px;">Name</th>
+                                                    <th >License Key</th>
+                                                    <th style="width:200px;">Email</th>
+                                                    <th style="width:180px;">Operations</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr dir-paginate="item in data.lstUsers | itemsPerPage: pageSize" pagination-id="pgPage" current-page="currentPage">
+                                                    <td class="sDate">{{item.UserName}}</td>
+                                                    <td class="sDesc">
+                                                        {{item.Password}}
+                                                    </td>
+                                                    <td class="sDesc">
+                                                        {{item.Name}}
+                                                    </td>
+                                                    <td class="sDesc">
+                                                        {{item.LicenseKey}}
+                                                    </td>
+                                                    <td class="sDesc">
+                                                        {{item.Mail}}
+
+                                                    </td>
+
+                                                    <td>
+                                                        <span class="btn btn-info btn-sm" title="View" ng-click="onViewUser(item);"><i class="fa fa-eye" style="padding-right: 0px;"></i></span>
+                                                        <span class="btn btn-success btn-sm" title="Edit" ng-click="onUpdateUser(item);"><i class="fa fa-edit" style="padding-right: 0px;"></i></span>
+                                                        <span class="btn btn-danger btn-sm" title="Remove" ng-click="onRemoveUser(item);"><i class="fa fa-remove" style="padding-right: 0px;"></i></span>
+                                                        <span class="btn btn-warning btn-sm" title="Change Password" ng-click="onChangePassword(item);"><i class="fa fa-key" style="padding-right: 0px;"></i></span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                    <div class="text-center">
+                                        <dir-pagination-controls pagination-id="pgPage" boundary-links="true" template-url="~/dirPagination.tpl.html"></dir-pagination-controls>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-12 col-lg-12 padd0" ng-show="isSettingOn">
+                        <div class="col-xs-12 col-md-12 col-lg-12  text-right" style="height: 40px; background-image: url('../Content/Canvas/CaptureHeader.PNG'); ">
+                            <span class="btn btn-success btn-sm" title="Edit" ng-click="onSaveSetting();" style="margin-top: 5px; margin-right: 10px;"><i class="fa fa-save" style="padding-right: 5px;"></i>Save Setting</span>
+                        </div>
+                        <div class="col-xs-12 col-md-12 col-lg-12 padd0">
+                            <div class="col-xs-12 col-md-12 col-lg-12 " style="padding-left: 10px; padding-top: 10px; padding-right: 20px; padding-bottom: 20px;">
+                                <div class="container-fluid">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-10">
+
+
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-10">
+                                        <div class="col-sm-4 col-md-3">
+                                            <div class="panel panel-info-alt">
+                                                <div class="panel-heading">
+                                                    <h3 class="panel-title-sys"><b>Points</b></h3>
+                                                </div>
+                                                <div class="panel-body-sys">
+                                                    <div class="row">
+                                                        <div class="input-field col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                                                            <label>Point Radius</label>
+                                                            <input type="text" only-digits class="form-control" ng-model="sysPara.PointRadius.Value" style="width: 80px !important;" />
+                                                        </div>
+                                                        <div class="input-field col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                                                            <label>Point Color</label><br />
+                                                            <input type="color"
+                                                                   name="favcolor"
+                                                                   id="txtColor"
+                                                                   class="input-color"
+                                                                   ng-model="sysPara.ColorPoint.Value">
+
+                                                        </div>
+                                                        <div class="input-field col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                                                            <label>Point Color Selected</label><br />
+                                                            <input type="color"
+                                                                   name="favcolor"
+                                                                   id="txtColor"
+                                                                   class="input-color"
+                                                                   ng-model="sysPara.ColorPointSelected.Value">
+
+                                                        </div>
+                                                        <div class="input-field col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                                                            <label>Border Color Of Point</label><br />
+                                                            <input type="color"
+                                                                   name="favcolor"
+                                                                   id="txtColor"
+                                                                   class="input-color"
+                                                                   ng-model="sysPara.BorderColorPoint.Value">
+
+                                                        </div>
+                                                    </div>
+                                                </div><!-- panel-body-sys -->
+                                            </div><!-- panel -->
+                                        </div>
+
+                                        <div class="col-sm-4 col-md-3">
+                                            <div class="panel panel-info-alt">
+                                                <div class="panel-heading">
+                                                    <h3 class="panel-title-sys"><b>Human Body</b></h3>
+                                                </div>
+                                                <div class="panel-body-sys">
+                                                    <div class="row">
+                                                        <div class="input-field col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                                                            <label>Point In Body Radius</label><br />
+                                                            <input type="text" only-digits class="form-control" ng-model="sysPara.PointHumanRadius.Value" style="width: 80px !important;" />
+                                                        </div>
+                                                        <div class="input-field col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                                                            <label>Point Color in Body</label><br />
+                                                            <input type="color"
+                                                                   name="favcolor"
+                                                                   id="txtColor"
+                                                                   class="input-color"
+                                                                   ng-model="sysPara.ColorPointHuman.Value">
+
+                                                        </div>
+                                                        <div class="input-field col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                                                            <label>Point Color Selected In Body</label><br />
+                                                            <input type="color"
+                                                                   name="favcolor"
+                                                                   id="txtColor"
+                                                                   class="input-color"
+                                                                   ng-model="sysPara.ColorPointHumanSelected.Value">
+
+                                                        </div>
+                                                        <div class="input-field col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+                                                            <label>Border Color Of Point In Body</label><br />
+                                                            <input type="color"
+                                                                   name="favcolor"
+                                                                   id="txtColor"
+                                                                   class="input-color"
+                                                                   ng-model="sysPara.BorderColotPointHuman.Value">
+
+                                                        </div>
+                                                    </div>
+                                                </div><!-- panel-body-sys -->
+                                            </div><!-- panel -->
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-10">
+
+
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-12 col-lg-12 padd0" ng-show="isHelpOn">
+                        <div class="col-xs-12 col-md-12 col-lg-12 padd0" style="height: 40px; background-image: url('../Content/Canvas/CaptureHeader.PNG'); ">
+
+                        </div>
+                        <div class="col-xs-12 col-md-12 col-lg-12 padd0">
+                            <div class="col-xs-12 col-md-12 col-lg-12 " style="padding-left: 10px; padding-top: 10px; padding-right: 20px; padding-bottom: 20px;">
+                                <div class="container-fluid">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-10">
+                                        <div class="nav-tabs-custom box-primary margin-bottom-10" style="border-bottom: 1px solid #ddd;">
+                                            <ul class="nav nav-tabs main-body-tab" ng-init="tab=1">
+                                                <li ng-class="{'active' : item.isSelected == true}" ng-click="selectTab(item);" ng-repeat="item in listHelp"><a href="">{{item.Name}}</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-10">
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-bottom-20" ng-if="helpOption.Point">
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center padding-bottom-10">
+                                                <img src="{{getHelpImage(1)}}" width="682" height="541" />
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-left">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-20">
+                                                    <b>1.</b> Khu vực chọn các góc nhì trên khuôn mặt.
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-20">
+                                                    <b>2.</b> Menu chức năng.
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-20">
+                                                    <b>3.</b> Các huyệt trên mặt.
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-left padding-top-10">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-20">
+                                                    <b><i class="fa fa-plus-square-o" style="padding-right: 5px;"></i> Thêm Huyệt mới</b>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-40">
+                                                    <b>1.</b> Click chuột phải trên khu vực mặt. (lúc này hệ thống sẽ ghi nhận thêm huyệt mới vào vị trí trỏ chuột)
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-40">
+                                                    <b>2.</b> Pupup điền thông tin về huyệt hiện lên, người dùng có thể điền thông tin cho huyệt.
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-40">
+                                                    <b>3.</b> Sau khi điền xong dữ liệu cho huyệt thực hiện chọn save để lưu huyệt vào hệ thống.
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-left padding-top-10">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-20">
+                                                    <b><i class="fa fa-plus-square-o" style="padding-right: 5px;"></i> Update thông tin Huyệt</b>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center padding-bottom-10">
+                                                    <img src="{{getHelpImage(2)}}" width="395" height="191" />
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-40">
+                                                    <b>1.</b> Click chuột vào huyệt muốn update thông tin. Huyệt được chọn sẽ đổi màu theo config.
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-40">
+                                                    <b>2.</b> Trên thanh title xuất hiện 3 button tương ứng : view, edit, remove. Để update thông tin ta chọn edit button.
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-40">
+                                                    <b>3.</b> Popup thông tin về huyệt bật lên. Ta có thể thay đổi thông tin của huyệt
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-40">
+                                                    <b>4.</b> Sau khi điền xong dữ liệu cho huyệt thực hiện chọn save để lưu huyệt vào hệ thống.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-if="helpOption.PointGroup">
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center padding-bottom-10">
+                                                <img src="{{getHelpImage(3)}}" width="450" height="111" />
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-left">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-20">
+                                                    <b>1.</b> Chọn chức năng liên quan đến Bộ Huyệt.
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-20">
+                                                    <b>2.</b> Danh sách các Bộ Huyệt.
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-20">
+                                                    <b>3.</b> Các Operations của từng Bộ Huyệt. Bao gồm : View, Update, Remove, Detail thứ tự tương ứng.
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-20">
+                                                    <b>4.</b> Chức năng thêm Bộ Huyệt mới.
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-left padding-top-10">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-20">
+                                                    <b><i class="fa fa-plus-square-o" style="padding-right: 5px;"></i> Thêm Bộ Huyệt mới</b>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-40">
+                                                    <b>1.</b> Click button New Group để bật popup điền thông tin Bộ Huyệt mới.
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center padding-bottom-10">
+                                                    <img src="{{getHelpImage(4)}}" width="430" height="283" />
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-40">
+                                                    <b>2.</b> Điền thông tin tên bộ huyệt và ghi chú.
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-40">
+                                                    <b>3.</b> Sau khi điền xong dữ liệu cho huyệt thực hiện chọn save để lưu huyệt vào hệ thống.
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-left padding-top-10">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-20">
+                                                    <b><i class="fa fa-plus-square-o" style="padding-right: 5px;"></i> Cài đặt huyệt trong Bộ Huyệt</b>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-40">
+                                                    <b>1.</b> Click button <span class="btn btn-warning btn-sm" title="Points"><i class="fa fa-plus-circle" style="padding-right: 0px;"></i></span> để vào setup Huyệt cho Bộ Huyệt mới.
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center padding-bottom-10">
+                                                    <img src="{{getHelpImage(5)}}" width="430" height="283" />
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-40">
+                                                    <b>2.</b> Để thêm huyệt vào Bộ Huyệt, ta sẽ điền số huyệt vào ô tìm kiếm và thực hiện tim kiến khi chọn nút <span class="btn btn-success btn-sm" title="Points" ><i class="fa fa-search" style="padding-right: 0px;"></i> Find</span>.
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-40">
+                                                    <b>3.</b> Sau khi tìm kiến, sẽ xuất hiện các huyệt có vị trí trên mặt, những vị trí mặt nào có huyệt sẽ được hiện lên để chọn, còn không sẽ ẩn đi. Click vào huyệt để thực hiện thêm vào bộ huyệt.
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center padding-bottom-10">
+                                                    <img src="{{getHelpImage(6)}}" width="500" height="380" />
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-40">
+                                                    <b>4.</b> Khi chọn huyệt, Popup hiện lên để chọn action và số lần thực hiện.
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center padding-bottom-10">
+                                                    <img src="{{getHelpImage(7)}}" width="300" height="150" />
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-40">
+                                                    <b>5.</b> Nhìn vào danh sách huyệt trong bộ huyệt. Ta có thứ tự thực hiện các huyệt theo thứ tự từ trên xuống dưới. Để thay đổi vị trí một huyệt ta sử dụng <span class="btn btn-info btn-sm" title="Up"><i class="fa fa-arrow-up" style="padding-right: 0px;"></i></span> hay
+<span class="btn btn-info btn-sm" title="Down" ><i class="fa fa-arrow-down" style="padding-right: 0px;"></i></span>. 
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-40">
+                                                    <b>6.</b> Để loại huyệt ra khỏi bộ huyệt thì sử dụng <span class="btn btn-danger btn-sm" title="Remove"><i class="fa fa-remove" style="padding-right: 0px;"></i></span>.
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-40 padding-bottom-25">
+                                                    <b>7.</b> Sau khi ta hoànt tất việc thêm huyệt vào Bộ Huyệt, ta chọn <span class="btn btn-success btn-sm" style="margin-top: 5px; margin-right: 5px;"><i class="fa fa-save" style="padding-right: 5px;"></i>Save</span>  để lưu lại. Và nếu không muốn lưu kết quả này thì ta sử dụng 
+<span class="btn btn-danger btn-sm"  style="margin-top: 5px; margin-right: 10px;"><i class="fa fa-ban" style="padding-right: 5px;"></i>Cancel</span>.
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-if="helpOption.HumanBody">
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center padding-bottom-10">
+                                                <img src="{{getHelpImage(8)}}" width="600" height="680" />
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-left">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-20">
+                                                    <b>1.</b> Tính năng này cho phép gán các bộ huyệt nên vị trí nào đó trên cơ thể và các bộ phân nội tạng được liệt kê.
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-20">
+                                                    <b>2.</b> Tính năng cung cấp cho ta hình ảnh body của cả nam và nữ với 4 gọc nhìn.
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-20">
+                                                    <b>3.</b> Để chuyển đổi giữa nam và nữ ta chọn <img src="{{getHelpImage(10)}}" width="32" height="32" /> hoặc <img src="{{getHelpImage(11)}}" width="32" height="32" />
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-20">
+                                                    <b>4.</b> Chọn hình ảnh góc nhìn phía bên trái để đổi hướng nhìn body.
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-left padding-top-10">
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-20">
+                                                    <b><i class="fa fa-plus-square-o" style="padding-right: 5px;"></i> Thêm một điểm trị bệnh trên cơ thể</b>
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-40">
+                                                    <b>1.</b> Click chuột phải vào vị trí trên co thể ngưởi ở khung hình tương ứng. Hệ thống sẽ bật lên Popup cho phép chúng ta chọn các bộ huyệt tương ứng cho vị trí này. Ta cũng có thể thêm một vài thông tin ghi chú trong ô description.
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center padding-bottom-10">
+                                                    <img src="{{getHelpImage(9)}}" width="430" height="283" />
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-40">
+                                                    <b>2.</b> Sau đó save ta sẽ có điểm trong trên co thể đúng vị trí chuột ta vừa click.
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-40">
+                                                    <b>3.</b> Để xem thông tin, sửa thông tin, hay không muốn thì xóa điểm này đi ta thực hiện chọn vào điểm đó, trên thanh title bar se cho chúng ta ba lựa chọn tương ứng: View, Edit, Remove.
+                                                </div>
+                                                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-left-40">
+                                                    <b>4.</b> Để add bộ huyệt cho các bộ phân bên trong cơ thể được liệt kê xung quanh cơ thể, ta chỉ việc click chuột vào bộ phần đó và thực hiện như trên.
+                                                </div>
+                                            </div>
+                                            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-left padding-top-10 padding-bottom-20">
+                                                
+                                            </div>
+                                        </div>
+                                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" ng-if="helpOption.User">
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-12 col-lg-12 padd0" ng-show="isGroupOn && !isAddItemForGroupPoints">
+                        <div class="col-xs-12 col-md-12 col-lg-12 text-right" style="height: 40px; background-image: url('../Content/Canvas/CaptureHeader.PNG'); ">
+                            <span class="btn btn-success btn-sm" title="Edit" ng-click="onAddGroup();" style="margin-top: 5px; margin-right: 10px;"><i class="fa fa-plus" style="padding-right: 5px;"></i>New Group</span>
+                        </div>
+                        <div class="col-xs-12 col-md-12 col-lg-12 padd0">
+                            <div class="col-xs-12 col-md-12 col-lg-12 " style="padding-left: 10px; padding-top: 10px; padding-right: 20px; padding-bottom: 20px;">
+                                <div class="container-fluid">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-10">
+
+
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-10">
+                                        <table class="table table-striped table-bordered table-hover" block-ui="frmBlockUI">
+
+                                            <thead>
+                                                <tr>
+                                                    <th class="text-center" style="width:50px;">ID</th>
+                                                    <th style="width:350px;">Name</th>
+                                                    <th>Description</th>
+                                                    <th style="width:220px;">Operations</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr dir-paginate="item in data.lstBoHuyetOrg | itemsPerPage: pageSizeGroup" pagination-id="pgPage1" current-page="currentPageGroup">
+                                                    <td class="sDate text-center">{{item.AutoID}}</td>
+                                                    <td class="sDesc">
+                                                        {{item.Name}}
+                                                    </td>
+                                                    <td class="sDesc">
+                                                        {{item.Description}}
+                                                    </td>
+                                                    <td>
+                                                        <span class="btn btn-info btn-sm" title="View" ng-click="onViewGroup(item);"><i class="fa fa-eye" style="padding-right: 0px;"></i></span>
+                                                        <span class="btn btn-success btn-sm" title="Edit" ng-click="onUpdateGroup(item);"><i class="fa fa-edit" style="padding-right: 0px;"></i></span>
+                                                        <span class="btn btn-danger btn-sm" title="Remove" ng-click="onRemoveGroup(item);"><i class="fa fa-remove" style="padding-right: 0px;"></i></span>
+                                                        <span class="btn btn-warning btn-sm" title="Points" ng-click="onPointsGroup(item);"><i class="fa fa-plus-circle" style="padding-right: 0px;"></i></span>
+                                                        <span class="btn btn-primary btn-sm" title="youtube link" ng-click="onPointsGroupLink(item);"><i class="fa fa-link" style="padding-right: 0px;"></i></span>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
+                                    </div>
+                                    <div class="text-center">
+                                        <dir-pagination-controls pagination-id="pgPage1" boundary-links="true" template-url="~/dirPagination.tpl.html"></dir-pagination-controls>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-md-12 col-lg-12 padd0" ng-show="isGroupOn && isAddItemForGroupPoints">
+                        <div class="col-xs-12 col-md-12 col-lg-12" style="height: 40px; background-image: url('../Content/Canvas/CaptureHeader.PNG'); ">
+                            <div class="col-xs-8 col-md-8 col-lg-8 padding-top-10 padding-left-30">
+                                <label style="color: #FFF;"><i class="fa fa-edit" style="padding-right: 5px;"></i><b>{{currentGroup.Name}}</b></label>
+                            </div>
+                            <div class="col-xs-4 col-md-4 col-lg-4 text-right">
+                                <span class="btn btn-success btn-sm" title="Edit" ng-click="onSaveGroupPoints();" style="margin-top: 5px; margin-right: 5px;"><i class="fa fa-save" style="padding-right: 5px;"></i>Save</span>
+                                <span class="btn btn-danger btn-sm" title="Edit" ng-click="onCancelSaveGroupPoints();" style="margin-top: 5px; margin-right: 10px;"><i class="fa fa-ban" style="padding-right: 5px;"></i>Cancel</span>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-12 col-lg-12 padd0">
+                            <div class="col-xs-12 col-md-12 col-lg-12 " style="padding-left: 10px; padding-top: 10px; padding-right: 20px; padding-bottom: 20px;">
+                                <div class="container-fluid">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-10">
+
+
+                                    </div>
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-10">
+                                        <table>
+                                            <tr>
+                                                <td width="400" height="600" align="left" valign="top">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                                            <label>Number</label>
+                                                            <input class="form-control" name="tbxNumber" type="text" ng-model="PointInGroup.number">
+                                                        </div>
+                                                        <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                                            <br />
+                                                            <span class="btn btn-success btn-sm" title="Points" ng-click="onFindPoint()" ><i class="fa fa-search" style="padding-right: 0px;"></i> Find</span>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-top-10 padding-bottom-10" >
+                                                        <canvas id="groupCanvas" height="500" width="400"></canvas>
+                                                        <canvas id="groupIconCanvas" height="70" width="400"></canvas>
+                                                    </div>
+                                                </td>
+                                                <td align="left" valign="top">
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                                        <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                                                            <br />
+                                                            <br />
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-bottom-10" style="padding-top: 23px;">
+                                                        <table class="table table-striped table-bordered table-hover" block-ui="frmBlockUI">
+
+                                                            <thead>
+                                                                <tr>
+                                                                    <th class="text-center" style="width:40px;">Index</th>
+                                                                    <th class="text-center" style="width:60px;">Number</th>
+                                                                    <th style="width:80px;">Action</th>
+                                                                    <th style="width:140px;">Count Action</th>
+                                                                    <th>Region</th>
+                                                                    <th style="width:70px;">Postion</th>
+                                                                    <th style="width:150px;">Operations</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr ng-repeat="item in currentGroup.Huyets">
+                                                                    <td class="sDate text-center">{{item.PointIndex}}</td>
+                                                                    <td class="text-center">
+                                                                        {{item.Number}}
+                                                                    </td>
+                                                                    <td class="sDesc">
+                                                                        {{item.Action}}
+                                                                    </td>
+                                                                    <td class="text-center">
+                                                                        @*{{item.CountAction}}*@
+                                                                        <input type="number"
+                                                                               step="1"
+                                                                               ng-init="1"
+                                                                               class="form-control"
+                                                                               min="10"
+                                                                               max="100"
+                                                                               ng-model="item.CountAction"
+                                                                               oninput="validity.valid||(value='');"
+                                                                               mw-input-restrict="onlynumbers" 
+                                                                               />
+                                                                    </td>
+                                                                    <td class="text-center">
+                                                                        <img ng-src="{{getRegionOfPoint(item.PointID)}}" width="45" height="40">
+                                                                    </td>
+                                                                    <td class="text-center">
+                                                                        <i class="fa {{getPositionOfPoint(item.PointID)}}" style="padding-right: 0px;"></i>
+                                                                    </td>
+                                                                    <td>
+                                                                        <span class="btn btn-info btn-sm" title="Up" ng-click="onUpPointGroup(item);" ng-if="item != null && item.PointIndex>1"><i class="fa fa-arrow-up" style="padding-right: 0px;"></i></span>
+                                                                        <span class="btn btn-info btn-sm" title="Down" ng-click="onDownPointGroup(item);" ng-if="currentGroup != null && item.PointIndex<currentGroup.Huyets.length"><i class="fa fa-arrow-down" style="padding-right: 0px;"></i></span>
+                                                                        <span class="btn btn-success btn-sm" title="Points" ng-click="onEditPointsGroup(item);" ng-if="false"><i class="fa fa-edit" style="padding-right: 0px;"></i></span>
+                                                                        <span class="btn btn-danger btn-sm" title="Remove" ng-click="onRemovePointGroup(item);"><i class="fa fa-remove" style="padding-right: 0px;"></i></span>                                                                 
+                                                                    </td>
+                                                                </tr>
+                                                            </tbody>
+
+                                                        </table>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+<script type="text/ng-template" id="AddBodyItemModal.html">
+    <div id="frmBlockCancellation">
+        <div class="modal-header" style="background: #2799ed;">
+            <button aria-label="Close" data-dismiss="modal" ng-click="closeAddBodyItemModal();" class="close" type="button"><span aria-hidden="true">×</span></button>
+            <h4 id="gridSystemModalLabel" class="modal-title" style="color:#fff;">Add Objects</h4>
+        </div>
+        <div class="modal-body" style="padding:5px;">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padd0" ng-class="{'show_errors' : hasError == true}" ng-if="hasError">
+                        <label ng-bind-template="{{msgError}}"></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-md-12 col-lg-12 popUp">
+
+                        <div class="row">
+                            <div class="panel-body padding-0">
+
+                                <div class="col-md-5 col-lg-5">
+                                    <div class="input-field  col-md-12 col-lg-12">
+                                        <label>Description</label>
+                                        <textarea ng-model="BodyItemData.Description" class="form-control" rows="12"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 col-lg-7">
+                                    <div class="input-field  col-md-12 col-lg-12">
+                                        <label>List Bo Huyet</label>
+                                        <table class="table table-fixed">
+                                            <thead>
+                                                <tr>
+                                                    <th class="col-xs-2 text-center">select</th>
+                                                    <th class="col-xs-10">Name</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody >
+                                                <tr ng-repeat="item in data.lstBoHuyet">
+                                                    <td class="col-xs-2 text-center">
+                                                    <input type="checkbox" ng-model="item.isSelected">
+                                                    </td>
+                                                    <td class="col-xs-10">{{item.Name}}</td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                        
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="float: right;">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <button type="button" ng-click="saveBodyItem();" class="btn  btn-block  btn-success">Save</button>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <button type="button" ng-click="closeAddBodyItemModal();" class="btn btn-block btn-default">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="ViewBodyItemModal.html">
+    <div id="frmView">
+        <div class="modal-header" style="background: #2799ed;">
+            <button aria-label="Close" data-dismiss="modal" ng-click="closeViewBodyItemModal();" class="close" type="button"><span aria-hidden="true">×</span></button>
+            <h4 id="gridSystemModalLabel" class="modal-title" style="color:#fff;">Add Objects</h4>
+        </div>
+        <div class="modal-body" style="padding:5px;">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padd0" ng-class="{'show_errors' : hasError == true}" ng-if="hasError">
+                        <label ng-bind-template="{{msgError}}"></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-md-12 col-lg-12 popUp">
+
+                        <div class="row">
+                            <div class="panel-body padding-0">
+
+                                <div class="col-md-5 col-lg-5">
+                                    <div class="input-field  col-md-12 col-lg-12">
+                                        <label>Description</label>
+                                        <textarea ng-model="BodyItemDescription" class="form-control" rows="8" ng-readonly="true"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 col-lg-7">
+                                    <div class="input-field  col-md-12 col-lg-12">
+                                        <label>List Bo Huyet</label>
+                                        <hr style="margin-top: 0px;"/>
+                                        <div class="BodyPointName" ng-repeat="item in lstViewBodyItems">
+                                            <label style="font-family: 'Helvetica Neue,Helvetica,Arial,sans-serif'; font-size: 18px;">- {{item.Name}}</label>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="float: right;">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pull-right">
+                    <button type="button" ng-click="closeViewBodyItemModal();" class="btn btn-block btn-default">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="ConfirmModal.html">
+    <div id="frmConfrim">
+        <div class="modal-header" style="background: #2799ed;">
+            <button aria-label="Close" data-dismiss="modal" ng-click="closeConfirmModal();" class="close" type="button"><span aria-hidden="true">×</span></button>
+            <h4 id="gridSystemModalLabel" class="modal-title" style="color:#fff;">{{confirmData.title}}</h4>
+        </div>
+        <div class="modal-body" style="padding:5px;">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padd0" ng-class="{'show_errors' : hasError == true}" ng-if="hasError">
+                        <label ng-bind-template="{{msgError}}"></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-md-12 col-lg-12 popUp padding-top-10">
+                        {{confirmData.content}}
+                        
+                    </div>
+                </div>
+                <div class="row" ng-show="confirmData.type == '1' && showAddMirron">
+                    <div class="col-xs-12 col-md-12 col-lg-12 popUp padding-top-10">
+                        <label>Remove Mirron Point</label>&nbsp;&nbsp;
+                        <input bs-switch
+                               ng-model="MirronState.isAddMirronPoint"
+                               type="checkbox"
+                               switch-on-text="Yes"
+                               switch-off-text="No"
+                               ng-true-value=true
+                               ng-false-value=false />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="float: right;">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <button type="button" ng-click="okConfirm();" class="btn  btn-block  btn-success">Ok</button>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <button type="button" ng-click="closeConfirmModal();" class="btn btn-block btn-default">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="AddSubBodyItemModal.html">
+    <div id="frmBlockCancellation">
+        <div class="modal-header" style="background: #2799ed;">
+            <button aria-label="Close" data-dismiss="modal" ng-click="closeAddSubBodyItemModal();" class="close" type="button"><span aria-hidden="true">×</span></button>
+            <h4 id="gridSystemModalLabel" class="modal-title" style="color:#fff;">Add Objects</h4>
+        </div>
+        <div class="modal-body" style="padding:5px;">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padd0" ng-class="{'show_errors' : hasError == true}" ng-if="hasError">
+                        <label ng-bind-template="{{msgError}}"></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-md-12 col-lg-12 popUp">
+
+                        <div class="row">
+                            <div class="panel-body padding-0">
+
+                                <div class="col-md-5 col-lg-5">
+                                    <div class="input-field  col-md-12 col-lg-12">
+                                        <label>Description</label>
+                                        <textarea ng-model="SubBodyItemData.Description" class="form-control" rows="12"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-md-7 col-lg-7">
+                                    <div class="input-field  col-md-12 col-lg-12">
+                                        <label>List Bo Huyet</label>
+                                        <table class="table table-fixed">
+                                            <thead>
+                                                <tr>
+                                                    <th class="col-xs-2 text-center">select</th>
+                                                    <th class="col-xs-10">Name</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr ng-repeat="item in data.lstBoHuyet">
+                                                    <td class="col-xs-2 text-center">
+                                                        <input type="checkbox" ng-model="item.isSelected">
+                                                    </td>
+                                                    <td class="col-xs-10">{{item.Name}}</td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="float: right;">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <button type="button" ng-click="saveSubBodyItem();" class="btn  btn-block  btn-success">Save</button>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <button type="button" ng-click="closeAddSubBodyItemModal();" class="btn btn-block btn-default">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="AddOrEditPointModal.html">
+    <div id="frmPoint">
+        <div class="modal-header title-header-modal">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="closeAddOrEditPoint();"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Point Infomation</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <h2 class="padding-left-30" ng-show="viewPoint">Number: {{currentDataPoint.Number}}</h2>
+                   
+                    <div class="row" ng-show="!viewPoint">
+                        <div class="input-field  col-md-4 col-lg-4">
+                            <label>Number</label>
+                            <input class="form-control" name="tbxNumber" type="text" ng-model="currentDataPoint.Number" ng-show="!viewPoint" ng-disabled="isEdit">
+                        </div>
+                        <div class="input-field  col-md-4 col-lg-4" ng-show="showAddMirron">
+                            <label>Add Mirron Point</label><br />
+                            <input bs-switch
+                               ng-model="MirronState.isAddMirronPoint"
+                               type="checkbox"
+                               switch-on-text="Yes"
+                               switch-off-text="No"
+                               ng-true-value=true
+                               ng-false-value=false
+                               />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field  col-md-4 col-lg-4">
+                            <label>Description</label>
+                            <textarea ng-model="currentDataPoint.Description" class="form-control" rows="12" ng-readonly="viewPoint" style="background-color:#fff;" ></textarea>
+                        </div>
+                        <div class="input-field  col-md-4 col-lg-4">
+                            <label>Cong dung</label>
+                            <textarea ng-model="currentDataPoint.CongDung" class="form-control" rows="12" ng-readonly="viewPoint" style="background-color:#fff;"></textarea>
+                        </div>
+                        <div class="input-field  col-md-4 col-lg-4">
+                            <label>Chu Tri</label>
+                            <textarea ng-model="currentDataPoint.ChuTri" class="form-control" rows="12" ng-readonly="viewPoint" style="background-color:#fff;"></textarea>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="modal-footer">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="float: right;">
+                
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pull-right">
+                    <button type="button" ng-click="closeAddOrEditPoint();" class="btn btn-block btn-default">Close</button>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pull-right">
+                    <button type="button" ng-click="SavePointInfo();" class="btn btn-info btn-default" style="width: 100%" ng-show="!viewPoint">Save</button>
+                </div>
+            </div>
+
+        </div>
+        @*<div class="modal-footer">
+
+            </div>*@
+    </div>
+</script>
+
+<script type="text/ng-template" id="UserInfo.html">
+    <div id="frmUser">
+        <div class="modal-header title-header-modal">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="closeUserInfo();"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">User Infomation</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="row">
+                        <div class="input-field  col-md-4 col-lg-4">
+                            <label>UserName</label>
+                            <input class="form-control" name="tbxUsername" type="text" ng-model="userInfo.UserName" ng-disabled="UserDlgState !='3'">
+                        </div>
+                        <div class="input-field  col-md-4 col-lg-4">
+                            <label>Password</label>
+                            <input class="form-control" name="tbxPassword" type="text" ng-model="userInfo.Password" ng-disabled="UserDlgState !='3'">
+                        </div>
+                        <div class="input-field  col-md-4 col-lg-4" >
+                            <label>Active</label><br />
+                            <input bs-switch
+                                   ng-model="userInfo.Active"
+                                   type="checkbox"
+                                   switch-on-text="Yes"
+                                   switch-off-text="No"
+                                   ng-true-value="'1'"
+                                   ng-false-value="'0'"/>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field  col-md-8 col-lg-8">
+                            <label>License Key</label>
+                            <input ng-model="userInfo.LicenseKey" type="text" name="tbxLicenseKey" class="form-control" ng-disabled="UserDlgState !='3'">
+                        </div>
+                        <div class="input-field  col-md-4 col-lg-4" >
+                            <label>Adminstrator</label><br />
+                            <input bs-switch
+                                   ng-model="userInfo.Admin"
+                                   type="checkbox"
+                                   switch-on-text="Yes"
+                                   switch-off-text="No"
+                                   ng-true-value="'1'"
+                                   ng-false-value="'0'"/>
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <div class="input-field  col-md-4 col-lg-4" >
+                            <label>Name</label>
+                            <input ng-model="userInfo.Name" type="text" name="tbxName" class="form-control" ng-disabled="UserDlgState =='1'">
+                        </div>
+                        <div class="input-field  col-md-4 col-lg-4">
+                            <label>Email</label>
+                            <input ng-model="userInfo.Mail" type="text" name="tbxMail" class="form-control" ng-disabled="UserDlgState =='1'">
+                        </div>
+                        <div class="input-field  col-md-4 col-lg-4">
+                            <label>Tel</label>
+                            <input ng-model="userInfo.Tel" type="text" name="tbxTel" class="form-control" ng-disabled="UserDlgState =='1'">
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <div class="input-field  col-md-4 col-lg-4" >
+                            <label>Sex</label>
+                            <select kendo-drop-down-list
+                                    k-data-text-field="'Value'"
+                                    k-data-value-field="'ID'"
+                                    k-data-source="data.lstSex"
+                                    ng-model="UserInfo.Sex"
+                                    style="width: 100%"
+                                    ng-disabled="UserDlgState =='1'"
+                                    ></select>
+                        </div>
+                        <div class="input-field  col-md-4 col-lg-4">
+                            <label>BOD</label>
+                            <input kendo-date-picker
+                                   k-ng-model="userInfo.BOD"
+                                   ng-model="userInfo.BODString"
+                                   ng-disabled="UserDlgState =='1'"
+                                   data-fv-notempty="true"
+                                   />
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <div class="input-field  col-md-8 col-lg-8">
+                            <label>Address</label>
+                            <input ng-model="userInfo.Address" type="text" name="tbxName" class="form-control" ng-disabled="UserDlgState =='1'">
+                        </div>
+                        <div class="input-field  col-md-4 col-lg-4">
+                            <label>Country</label>
+                            <input ng-model="userInfo.Country" type="text" name="tbxMail" class="form-control" ng-disabled="UserDlgState =='1'">
+                        </div>
+                    </div>
+                    <div class="row" >
+                        <div class="input-field  col-md-12 col-lg-12">
+                            <label>Description</label>
+                            <textarea ng-model="userInfo.Description" class="form-control" rows="4" style="background-color:#fff;" ng-disabled="UserDlgState =='1'"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <div class="modal-footer">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="float: right;">
+
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pull-right">
+                    <button type="button" ng-click="closeUserInfo();" class="btn btn-block btn-default">Close</button>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pull-right">
+                    <button type="button" ng-click="SaveUserInfo();" class="btn btn-info btn-default" style="width: 100%" ng-show="UserDlgState !='1'">Save</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="ViewGroupModal.html">
+    <div id="frmGroup">
+        <div class="modal-header title-header-modal">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="closeGroupInfo();"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Points Group Infomation</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <label><b>Name</b></label><br />
+                    <textarea ng-model="currentGroup.Name" class="form-control" rows="2" style="background-color:#fff;" ng-readonly="isViewGroup"></textarea>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-top-15">
+                    <label><b>Description</b></label><br />
+                    <textarea ng-model="currentGroup.Description" class="form-control" rows="6" style="background-color:#fff;" ng-readonly="isViewGroup"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="float: right;">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pull-right">
+                    <button type="button" ng-click="closeGroupInfo();" class="btn btn-block btn-default">Close</button>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pull-right">
+                    <button type="button" ng-click="SaveGroupInfo();" class="btn btn-info btn-default" style="width: 100%" ng-show="!isViewGroup">Save</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="AddPointsToGroupPointModal.html">
+    <div id="frmGroup">
+        <div class="modal-header title-header-modal">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="closeAddPointGroupInfo();"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Add Point</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 text-center">
+                    <img ng-src="{{getRegionOfPoint(PointToAddToGroup.AutoID)}}" width="120" height="110">
+                </div>
+                <div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <label><b>Number</b></label><br />
+                        <input ng-model="PointToAddToGroup.Number" type="text" name="tbxMail" class="form-control" readonly>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <label><b>Position</b></label><br />
+                        <input ng-model="getPositionOfPoint(PointToAddToGroup.AutoID)" type="text" name="tbxMail" class="form-control" readonly>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <label><b>Action</b></label><br />
+                        <input ng-model="PointToAddToGroupData.action" type="text" name="tbxMail" class="form-control" readonly>
+                    </div>
+                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <label><b>Count Action</b></label><br />
+                        <input type="number"
+                               step="1"
+                               ng-init="1"
+                               class="form-control"
+                               min="10"
+                               max="100"
+                               ng-model="PointToAddToGroupData.countAction"
+                               oninput="validity.valid||(value='');"
+                               mw-input-restrict="onlynumbers" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="float: right;">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pull-right">
+                    <button type="button" ng-click="closeAddPointGroupInfo();" class="btn btn-block btn-default">Cancel</button>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pull-right">
+                    <button type="button" ng-click="SaveAddPointToGroupInfo();" class="btn btn-info btn-default" style="width: 100%">Add</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="ChangePasswordModal.html">
+    <div id="frmGroup">
+        <div class="modal-header title-header-modal">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="closeChangedPass();"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Change Password</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <label><b>Username</b></label><br />
+                    <input ng-model="userInfo.UserName" type="text" name="tbxMail" class="form-control" readonly>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-top-10">
+                    <label><b>New Password</b></label><br />
+                    <input ng-model="userInfo.Password" type="text" name="tbxMail" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="float: right;">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pull-right">
+                    <button type="button" ng-click="closeChangedPass();" class="btn btn-block btn-default">Cancel</button>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pull-right">
+                    <button type="button" ng-click="SavePassChanged();" class="btn btn-info btn-default" style="width: 100%">Save</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="AddLinkYoutubeModal.html">
+    <div id="frmGroup">
+        <div class="modal-header title-header-modal">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="closeAddYouTube();"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Add Link Video</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                        <label><b>Link</b></label><br />
+                        <input ng-model="linkData.Link"  class="form-control">
+                    </div>
+                    
+                    <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+                        <br />
+                        <button type="button" ng-click="addYoutubeLink();" class="btn btn-success btn-default">Add</button>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding-top-15">
+                    <table class="table table-striped table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th class="text-center">link</th>
+                                <th style="width: 80px;"></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="item in linkDatas">
+                                <td>
+                                   {{item.Link}}
+                                </td>
+                                <td>
+                                    <span class="btn btn-danger btn-sm" title="Remove" ng-click="onRemovePointGroupLink(item);"><i class="fa fa-remove" style="padding-right: 0px;"></i></span>    
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="float: right;">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pull-right">
+                    <button type="button" ng-click="closeAddYouTube();" class="btn btn-block btn-default">Cancel</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</script>
+
+<style>
+BodyPointName{
+    font-family: "Helvetica Neue,Helvetica,Arial,sans-serif";
+    font-size: 18px;
+    line-height: 1.42857143;
+    color: #333;
+}
+
+.table-fixed {
+  width: 100%;
+  background-color: #f3f3f3;
+}
+.table-fixed tbody {
+  height: 208px;
+  overflow-y: auto;
+  width: 100%;
+}
+.table-fixed thead,
+.table-fixed tbody,
+.table-fixed tr,
+.table-fixed td,
+.table-fixed th {
+  display: block;
+}
+.table-fixed tbody td {
+  float: left;
+}
+.table-fixed thead tr th {
+  float: left;
+  background-color: #f39c12;
+  border-color: #e67e22;
+}
+    
+
+</style>
+
+<style>
+    .nav-tabs-custom > .nav-tabs {
+    margin: 0;
+    border-bottom-color: #f4f4f4;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+}
+
+    .nav-tabs-custom > .nav-tabs > li:first-of-type {
+        margin-left: 0;
+    }
+
+.nav-tabs-custom .nav-tabs > li.active > a, .nav-tabs-custom .nav-tabs > li.active > a:hover, .nav-tabs-custom .nav-tabs > li.active > a:focus {
+    background-color: #fff;
+    border-color: transparent;
+    border-bottom-color: transparent;
+    cursor: default;
+}
+
+.nav-tabs-custom > .nav-tabs > li {
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    margin-right: 5px;
+}
+
+    .nav-tabs-custom > .nav-tabs > li.active {
+        border-bottom-color: #2799ed;
+    }
+
+    .nav-tabs-custom > .nav-tabs > li > a {
+        color: #686d86;
+        border-radius: 0;
+        font-weight: 600;
+    }
+
+        .nav-tabs-custom > .nav-tabs > li > a, .nav-tabs-custom > .nav-tabs > li > a:hover {
+            background: transparent;
+            margin: 0;
+            border-color: transparent;
+        }
+
+            .nav-tabs-custom > .nav-tabs > li.active > a, .nav-tabs-custom > .nav-tabs > li > a:hover {
+                color: #2799ed;
+            }
+
+.nav-tabs-custom > .tab-content {
+    padding: 15px 0px;
+    border-bottom-right-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+</style>
+
+<style>
+    .style-input {
+        width: 26% !important;
+        float: left;
+    }
+
+    .panel-body-sys table tr td {
+        cursor: pointer;
+    }
+
+    .boxleftmenu .panel-default > .panel-heading i {
+        background: transparent none repeat scroll 0 0;
+        border-right: 0 solid #ddd;
+        padding: 9px;
+        width: 35px;
+    }
+
+    .rowSelected {
+        background: #79b5fa !important;
+        color: #fff !important;
+    }
+
+    .panel-info-alt {
+        border-color: #46b8da;
+    }
+
+    .panel {
+        border-radius: 3px;
+        box-shadow: none;
+        position: relative;
+    }
+
+    .panel {
+        background-color: #fff;
+        border: 1px solid;
+        border-radius: 4px;
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
+        margin-bottom: 20px;
+    }
+
+    .panel-info-alt {
+        border-color: #46b8da !important;
+    }
+
+    .panel-title-sys {
+        color: inherit;
+        font-size: 18px;
+        margin-bottom: 0;
+        margin-top: 0;
+        padding-top: 0px !important;
+    }
+
+    .panel-body-sys {
+        padding: 10px !important;
+    }
+</style>

@@ -1,0 +1,18 @@
+﻿@using Stimulsoft.Report.Mvc;
+
+@Html.Stimulsoft().StiMvcViewer("MvcViewer", new StiMvcViewerOptions()
+{
+    Controller = "Home",
+    Actions =
+            {
+                GetReportSnapshot = "GetReportSnapshot",
+                ViewerEvent = "ViewerEvent",
+            },
+    Toolbar =
+        {
+            ShowPrintButton = false,
+            ShowSaveButton = false,
+        },
+    Server = { GlobalReportCache = false }
+})
+

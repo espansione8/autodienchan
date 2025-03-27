@@ -1,0 +1,501 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    try
+    {
+        Layout = Session[Constances.sLayoutPath].ToString();
+    }
+    catch(Exception ex)
+    {
+        Url.Action("Login", "Home");
+    }
+
+}
+<script src="~/Content/Canvas/BitmapLib.js"></script>
+<script src="~/Content/Canvas/BitmapLib2.js"></script>
+<script src="~/Content/Canvas/BitmapLib3.js"></script>
+<script src="~/Content/Canvas/BitmapLibManBody.js"></script>
+<script src="~/Content/Canvas/RenderCanvas.js"></script>
+<script src="~/Content/Canvas/BitmapHumanIcon.js"></script>
+<script src="~/Content/Canvas/BitmapLibFemaleBody.js"></script>
+<script src="~/Content/Canvas/BitmapAdmin.js"></script>
+@using WebResources;
+@using Common;
+
+<style>
+    body 
+    {
+        background-color: #191F26;
+    }
+    
+</style>
+
+<div class="canvasBox" ng-cloak ng-controller="MainController" block-ui="BlockUI">
+    <div class="row" >
+        <div class="row" ng-show="showLoading">
+            <div class="col-xs-12 col-md-12 col-lg-12 padd0 text-center" style="height: 400px; background: #191F26 url(../Content/Canvas/loadin1.gif) no-repeat center;">
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <div class="text-left">
+                <canvas id="myCanvas" height="600" width="800" ng-show="showMain"></canvas>
+                <canvas id="myCanvasHuman" height="600" width="800" ng-show="showHuman"></canvas>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<script type="text/ng-template" id="PointInfoModal.html">
+    <div id="frmConfirmation">
+        <div class="modal-header title-header-modal">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="closePointInfo();"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">{{langPara.Key_PointInfomation.Value}}</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <h2 class="padding-left-30">{{langPara.Key_Number.Value}}: {{currentPoint.Number}}</h2>
+                    <div class="row">
+                        <div class="input-field  col-md-4 col-lg-4">
+                            <label>{{langPara.Key_Description.Value}}</label>
+                            <textarea ng-model="currentPoint.Description" class="form-control" rows="12" ng-readonly="true" style="background-color:#fff;"></textarea>
+                        </div>
+                        <div class="input-field  col-md-4 col-lg-4">
+                            <label>{{langPara.Key_Uses.Value}}</label>
+                            <textarea ng-model="currentPoint.CongDung" class="form-control" rows="12" ng-readonly="true" style="background-color:#fff;"></textarea>
+                        </div>
+                        <div class="input-field  col-md-4 col-lg-4">
+                            <label>{{langPara.Key_Treatment.Value}}</label>
+                            <textarea ng-model="currentPoint.ChuTri" class="form-control" rows="12" ng-readonly="true" style="background-color:#fff;"></textarea>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            
+           
+        </div>
+        <div class="modal-footer">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="float: right;">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pull-right">
+                    <button type="button" ng-click="closePointInfo();" class="btn btn-block btn-default">{{langPara.Key_Close.Value}}</button>
+                </div>
+            </div>
+
+        </div>
+        @*<div class="modal-footer">
+           
+        </div>*@
+    </div>
+</script>
+
+<script type="text/ng-template" id="FindPointInfoModal.html">
+    <div id="frmConfirmation">
+        <div class="modal-header title-header-modal">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="closeFindPointInfo();"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">{{langPara.Key_FindPoint.Value}}</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="input-field  col-md-12 col-lg-12">
+                        <label>{{langPara.Key_Number.Value}}</label><br />
+                        <input type="text" ng-model="findPoint.number" style="width: 100%;"/>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+        <div class="modal-footer">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" style="float: right;">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                    <button type="button" ng-click="FindPointInfo();" class="btn  btn-block  btn-success">{{langPara.Key_Ok.Value}}</button>
+                </div>
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 ">
+                    <button type="button" ng-click="closeFindPointInfo();" class="btn btn-block btn-default">{{langPara.Key_Close.Value}}</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="FindBoHuyetInfoModal.html">
+    <div id="frmFindBoHuyet">
+        <div class="modal-header title-header-modal">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="closeFindBHInfo();"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">{{langPara.Key_PointGroup.Value}}</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padd0 text-center">
+                    <div class="creatediv1">
+                        <div class="col-md-12">
+                            <div class="panel panel-primary filterable">
+                                <div class="span12">
+                                    <table>
+                                        <tr>
+                                            <th style="width: 100%">
+                                                <input class="form-control ng-pristine ng-valid ng-touched" style="height: 44px;font-size: 17px;"
+                                                       ng-model="SearchInfo.fullTextSearch" ng-change="onSearch();" placeholder="{{langPara.Key_UniversalSearch.Value}}...">
+                                            </th>
+                                        </tr>
+                                    </table>
+                                    <div class="bg tablescroll">
+                                        <table class="table table-bordered table-striped box-object-category">
+                                            <tr class="boxFoodCategory clearfix" ng-repeat="item in boHuyetProcess" id="{{item.ID}}" ng-click="onSelectBoHuyet(item);">
+                                                <td style="width: 100%">{{item.Name}}</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div class="modal-footer">
+                <div class="col-xs-6 col-sm-12 col-md-12 col-lg-12 pull-right">
+                    <button type="button" ng-click="closeFindBHInfo();" class="btn btn-block btn-default">{{langPara.Key_Close.Value}}</button>
+                </div>
+            </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="SettingModal.html">
+    <div id="frmSetting">
+        <div class="modal-header title-header-modal">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="closeSetting();"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">{{langPara.Key_Setting.Value}}</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="input-field  col-md-3 col-lg-3">
+                        <label>{{langPara.Key_ShowGrid.Value}}</label><br />
+                        <input bs-switch
+                               ng-model="setting.showGrid"
+                               type="checkbox"
+                               switch-on-text="{{langPara.Key_Yes.Value}}"
+                               switch-off-text="{{langPara.Key_No.Value}}"
+                               ng-true-value=true
+                               ng-false-value=false
+                               ng-change="onShowHideGrid();" />
+                    </div>
+                    <div class="input-field  col-md-3 col-lg-3">
+                        <label>{{langPara.Key_ShowObject.Value}}</label>
+                        <input bs-switch
+                               ng-model="setting.dohinh"
+                               type="checkbox"
+                               switch-on-text="{{langPara.Key_Yes.Value}}"
+                               switch-off-text="{{langPara.Key_No.Value}}"
+                               ng-true-value=true
+                               ng-false-value=false
+                               ng-change="onShowHideDoHinh();" />
+                    </div>
+                    <div class="input-field  col-md-3 col-lg-3">
+
+                    </div>
+                    <div class="input-field  col-md-3 col-lg-3">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="float: right;">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pull-right">
+                    <button type="button" ng-click="closeSetting();" class="btn btn-block btn-default">{{langPara.Key_Close.Value}}</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="DoHinhModal.html">
+    <div id="frmDoHinh">
+        <div class="modal-header title-header-modal">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="closeDoHinh();"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">Object</h4>
+        </div>
+        <div class="modal-body">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padd0">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                        <img src="{{dohinhData.dh1}}" ng-click="onShowDH1();" class="imgDoHinh" />
+                        <img src="{{dohinhData.dh2}}" ng-click="onShowDH2();" class="imgDoHinh" />
+                        <img src="{{dohinhData.dh3}}" ng-click="onShowDH3();" class="imgDoHinh" />
+                        <img src="{{dohinhData.dh4}}" ng-click="onShowDH4();" class="imgDoHinh" />
+                        <img src="{{dohinhData.dh5}}" ng-click="onShowDH5();" class="imgDoHinh" />
+                        <img src="{{dohinhData.dh6}}" ng-click="onShowDH6();" class="imgDoHinh" />
+                        <img src="{{dohinhData.dh7}}" ng-click="onShowDH7();" class="imgDoHinh" />
+                        <img src="{{dohinhData.dh8}}" ng-click="onShowDH8();" class="imgDoHinh" />
+                        <img src="{{dohinhData.dh9}}" ng-click="onShowDH9();" class="imgDoHinh" />
+                        <img src="{{dohinhData.dh10}}" ng-click="onShowDH10();" class="imgDoHinh" />
+                        <img src="{{dohinhData.dh11}}" ng-click="onShowDH11();" class="imgDoHinh" />
+                        <img src="{{dohinhData.dh12}}" ng-click="onShowDH12();" class="imgDoHinh" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6" style="float: right;">
+                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 pull-right">
+                    <button type="button" ng-click="closeDoHinh();" class="btn btn-block btn-default">{{langPara.Key_Close.Value}}</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="BodyInfoModal.html">
+        <div class="modal-header" style="background: #2799ed;">
+            <button aria-label="Close" data-dismiss="modal" ng-click="closeInfoModal();" class="close" type="button"><span aria-hidden="true">×</span></button>
+            <h4 id="gridSystemModalLabel" class="modal-title" style="color:#fff;">{{langPara.Key_BodyPointInfomation.Value}}</h4>
+        </div>
+        <div class="modal-body" style="padding:5px;">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padd0" ng-class="{'show_errors' : hasError == true}" ng-if="hasError">
+                        <label ng-bind-template="{{msgError}}"></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 padd0">
+                        <div class="input-field  col-md-12 col-lg-12 padding-top-15">
+                            <textarea ng-model="BodyItemDescription" class="form-control" rows="14" ng-readonly="true" style="background-color:#fff;"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 padd0 text-center">
+                        <div class="creatediv1">
+                            <div class="col-md-12">
+                                <div class="panel panel-primary filterable">
+                                    <div class="span12">
+                                        <div class="bg tablescroll">
+                                            <table class="table table-bordered table-striped box-object-category">
+                                                <tr class="boxFoodCategory clearfix" ng-repeat="item in BodyItems" id="{{item.ID}}" ng-click="onSelectBoHuyetInBody(item);">
+                                                    <td style="width: 100%">{{item.Name}}</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="float: right;">
+                <button type="button" ng-click="closeInfoModal();" class="btn btn-block btn-default">{{langPara.Key_Close.Value}}</button>
+            </div>
+
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="SubBodyInfoModal.html">
+        <div class="modal-header" style="background: #2799ed;">
+            <button aria-label="Close" data-dismiss="modal" ng-click="closeAddSubBodyItemModal();" class="close" type="button"><span aria-hidden="true">×</span></button>
+            <h4 id="gridSystemModalLabel" class="modal-title" style="color:#fff;">{{langPara.Key_BodyPointInfomation.Value}}</h4>
+        </div>
+        <div class="modal-body" style="padding:5px;">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padd0" ng-class="{'show_errors' : hasError == true}" ng-if="hasError">
+                        <label ng-bind-template="{{msgError}}"></label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 padd0">
+                        <div class="input-field  col-md-12 col-lg-12 padding-top-15">
+                            <textarea ng-model="BodyItemDescription" class="form-control" rows="14" ng-readonly="true" style="background-color:#fff;"></textarea>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 padd0 text-center">
+                        <div class="creatediv1">
+                            <div class="col-md-12">
+                                <div class="panel panel-primary filterable">
+                                    <div class="span12">
+                                        <div class="bg tablescroll">
+                                            <table class="table table-bordered table-striped box-object-category">
+                                                <tr class="boxFoodCategory clearfix" ng-repeat="item in BodyItems" id="{{item.ID}}" ng-click="OkSubBodyItem(item);">
+                                                    <td style="width: 100%">{{item.Name}}</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="float: right;">
+                    <button type="button" ng-click="closeAddSubBodyItemModal();" class="btn btn-block btn-default">{{langPara.Key_Close.Value}}</button>
+                </div>
+
+            </div>
+        </div>
+</script>
+
+<script id="printRepostModel.html" type="text/ng-template">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" ng-click="close();"><span aria-hidden="true">&times;</span></button>
+        <h4 id="gridSystemModalLabel" class="modal-title">Print</h4>
+    </div>
+    <div class="modal-body">
+        <div class="content-fluid">
+            <div class="text-right">
+                <button data-dismiss="modal" style="width:150px;" class="btn btn-success margin-bottom-10" type="button" ng-click="okPrint('content-print');"> <i class="fa fa-print"></i> Print </button>
+                <button data-dismiss="modal" style="width:150px;" class="btn btn-success margin-bottom-10" type="button" ng-click="okPdf('table-print');"><i class="fa fa-file-pdf-o"></i> Export To PDF </button>
+                @*<button data-dismiss="modal" style="width:150px;" class="btn btn-success margin-bottom-10" type="button" ng-click="okExcel('content-print');">
+                        <i class="fa fa-file-excel-o"></i> @Resources.UserKey_ExportToExcel
+                    </button>*@
+
+            </div>
+
+            <div id="divPrintPrevew" ng-bind-html="repost">
+            </div>
+        </div>
+    </div>
+</script>
+
+<script type="text/ng-template" id="YoutubeModal.html">
+        <div class="modal-header" style="background: #2799ed;">
+            <button aria-label="Close" data-dismiss="modal" ng-click="closeYoutubeModal();" class="close" type="button"><span aria-hidden="true">×</span></button>
+            <h4 id="gridSystemModalLabel" class="modal-title" style="color:#fff;">Video</h4>
+        </div>
+        <div class="modal-body" style="padding:5px;">
+
+            <div class="container-fluid">
+                
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <iframe width="550" height="360" ng-src="{{linkDataURL}}" frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="row">
+                    <center>
+                        <span ng-repeat="item in currentBoHuyet.Links" ng-click="onViewVideo(item)" class="btn btn-default btn-sm">{{item.Index}}</span>
+                    </center>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12" style="float: right;">
+                    <button type="button" ng-click="closeYoutubeModal();" class="btn btn-block btn-default">{{langPara.Key_Close.Value}}</button>
+                </div>
+
+            </div>
+        </div>
+</script>
+
+<style>
+    .imgDoHinh{
+    border: 1px solid #FFF; 
+    background-color: #000;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    }
+
+    .imgDoHinh:hover{
+    cursor: pointer;
+    border: 1px solid #FF0; 
+    background-color: #DDD;
+     transition: transform 0.2s 0.1s ease-in, opacity 0.1s ease-in-out;
+    }
+
+
+}
+    body {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333;
+    background-color: #fff;
+}
+    /*Filter START*/
+.filterable {
+    margin-top: 15px;
+}
+.filterable .panel-heading .pull-right {
+    margin-top: -20px;
+}
+.filterable .filters input[disabled] {
+    background-color: transparent;
+    border: none;
+    cursor: auto;
+    box-shadow: none;
+    padding: 0;
+    height: auto;
+}
+.filterable .filters input[disabled]::-webkit-input-placeholder {
+    color: #333;
+}
+.filterable .filters input[disabled]::-moz-placeholder {
+    color: #333;
+}
+.filterable .filters input[disabled]:-ms-input-placeholder {
+    color: #333;
+}
+/*Filter END*/
+
+.table-widthB{
+    width: 48%;
+    }
+    
+.table-widthA{
+    width: 49.8%;
+    }
+    
+.bg{
+    background-color: white;
+    }  
+      
+.tablescroll {
+    overflow-y: auto;
+	overflow-x: hidden;
+	height: 292px;
+	margin-right: 1px;
+}
+
+th {
+  background: #e5e5e5;
+  color: #454545;
+  font-weight: bold;
+  height: 40px;
+}
+/*Radio and Checkbox START*/
+
+/*Radio and Checkbox END*/
+
+.box-object-category {
+        overflow-y: scroll;
+        margin-left: 0px;
+        box-shadow: none;
+    }
+
+ .box-object-category .boxFoodCategory {
+        margin-bottom: 1px;
+        padding: 5px 0;
+        font-size: 17px;
+    }
+
+ .box-object-category .boxFoodCategory:hover {
+        cursor: pointer;
+        background-color: rgba(255,0,0,1.0);
+        transition-delay: 0.3s;
+        transform: scale(1,1);
+        padding: 5px 0;
+        transition: transform 0.2s 0.1s ease-in, opacity 0.1s ease-in-out;
+        color: #fff;
+    }
+
+</style>

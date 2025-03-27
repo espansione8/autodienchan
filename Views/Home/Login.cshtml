@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+    body{
+	background-color: #000;
+}
+
+.vertical-offset-100{
+    padding-top:100px;
+}
+
+.inputFormField{
+    display:none;
+}
+</style>
+
+<div class="container" ng-controller="LoginController">
+    <div class="row vertical-offset-100">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{{data.langPara.Key_PleaseSignIn.Value}}</h3>
+                </div>
+                <div class="panel-body">
+                    <form accept-charset="UTF-8" role="form">
+                        <fieldset>
+                            <div class="form-group">
+                                <input bs-switch
+                                       ng-model="UserData.followUserName"
+                                       type="checkbox"
+                                       switch-on-text="{{data.langPara.Key_Username.Value}}"
+                                       switch-off-text="{{data.langPara.Key_LicenseKey.Value}}"
+                                       ng-true-value=true
+                                       ng-false-value=false />
+                            </div>
+                            <div class="form-group inputFormField" ng-show="UserData.followUserName">
+                                <input class="form-control" placeholder="{{data.langPara.Key_Username.Value}}" name="username" type="text" ng-model="UserData.UserName">
+                            </div>
+                            <div class="form-group inputFormField" ng-show="UserData.followUserName">
+                                <input class="form-control" placeholder="Password" name="password" type="password" ng-model="UserData.Password">
+                            </div>
+                            <div class="form-group" ng-show="!UserData.followUserName">
+                                <input class="form-control" placeholder="{{data.langPara.Key_LicenseKey.Value}}" name="license" type="text" ng-model="UserData.LicenseKey">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="checkbox" ng-model="UserData.isAdminCheckbox" id="chkIsAdmin">
+                                <label for="chkIsAdmin">Accesso Amministratore</label>
+                            </div>
+                            <div class="form-group">
+                                <label>{{data.langPara.Key_Language.Value}}</label>
+                                <select kendo-drop-down-list
+                                        k-data-text-field="'Value'"
+                                        k-data-value-field="'ID'"
+                                        k-data-source="data.listLang"
+                                        ng-model="lang.language"
+                                        ng-change="onLanguageChanged()"
+                                        style="width: 100%"></select>
+                            </div>
+                            <span class="btn btn-lg btn-success btn-block" ng-click="OnLogin();">{{data.langPara.Key_Login.Value}}</span>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('#chkIsAdmin').change(function () {
+            if ($(this).prop('checked')) {
+                $('.inputFormField').show();
+            } else {
+                $('.inputFormField').hide();
+            }
+        });
+    });
+</script>
