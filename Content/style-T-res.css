@@ -1,0 +1,143 @@
+﻿#page-content-t-rest {
+    width: 80%;
+    padding: 15px;
+    margin: auto;
+}
+span.k-widget.k-datepicker.k-header.form-control {
+    border: none;
+}
+.panel-head-t-rest {
+    padding: 20px 10px;
+}
+
+.panel-title-t-rest {
+    color: #d9534f;
+    font-size: 27px;
+    margin: 0;
+    line-height: 35px;
+}
+
+.box-fillter-search {
+    background: #dae0e6 none repeat scroll 0 0;
+    border-radius: 4px;
+    padding: 10px 5px;
+}
+
+    .box-fillter-search p {
+        margin: 8px 0;
+    }
+
+    .box-fillter-search button {
+        margin: 15px 0;
+    }
+
+tr:nth-child(2n+2) {
+    background: rgba(244, 255, 199, 1);
+}
+
+.line-style-t-res {
+    border-top: 2px solid #000;
+    border-bottom: 1px solid #000;
+    height: 8px;
+    margin-bottom: 20px;
+    /* display: inline-block; */
+}
+
+.selected-row {
+    background-color: #b7b7b7;
+    color: white;
+    font-weight: bold;
+}
+
+.tab-pane {
+    height: 300px;
+}
+
+.tab-boder-content {
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    padding: 15px !important;
+}
+.radio-custom{
+    margin-bottom: 10px;
+}
+.tab-content{
+    height: 300px;
+}
+/* ReservationList */
+ul.radio-reservationlist li {
+    float: left;
+    display: block;
+    line-height: 25px;
+    padding: 0px 22px;
+    width: 25%;
+}
+
+ul.radio-reservationlist {
+    display: inline-block;
+    padding: 0;
+    width: 100%;
+}
+.no-padding {
+    padding: 0 !important;
+}
+.no-margin{
+    margin:0 !important;
+}
+.input-form-reservationlist{
+    margin-bottom:20px;
+}
+.btn.btn-info.resv-search{
+    padding: 6px 60px;
+    /* margin-top: 10px; */
+}
+.input-field.col-md-3.col-sm-6.col-xs-6 {
+    line-height: 23px;
+}
+.reservation-date-form span.form-control {
+    border: 0;
+    padding-bottom: 4px;
+}
+.resv-date span.form-control {
+    border: none;
+}
+.muti-checkbox {
+    position: relative;
+}
+
+.muti-checkbox .multiselect-parent{
+    width: 100%;
+    display: block;
+}
+
+.muti-checkbox button.dropdown-toggle{
+    width: 100%;
+    display: block;
+    clear: both;
+    float: none;
+}
+
+.muti-checkbox ul.dropdown-menu {
+    width: 100%;
+    top: 0;
+    top: inherit;
+}
+.content-dialog {
+    background-color: #fff;
+}
+
+.content-popup {
+    display: inline-block;
+    width: 100%;
+}
+@media(max-width :769px){
+    ul.radio-reservationlist li {
+    width: 50%;
+}
+}
+@media(max-width :376px){
+    ul.radio-reservationlist li {
+    width: 100%;
+}
+}

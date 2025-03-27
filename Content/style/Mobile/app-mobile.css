@@ -1,0 +1,1009 @@
+﻿
+#mysearch {
+    display: none;
+}
+
+.padding-0 {
+    padding: 0px !important;
+}
+
+.padding-5 {
+    padding: 5px !important;
+}
+
+.padding-10 {
+    padding: 10px !important;
+}
+
+.padding-15 {
+    padding: 15px !important;
+}
+
+.padding-20 {
+    padding: 20px !important;
+}
+
+.padding-25 {
+    padding: 25px !important;
+}
+
+.padding-30 {
+    padding: 30px !important;
+}
+
+.padding-35 {
+    padding: 35px !important;
+}
+
+.padding-40 {
+    padding: 40px !important;
+}
+
+.padding-45 {
+    padding: 45px !important;
+}
+
+.padding-left-0 {
+    padding-left: 0px !important;
+}
+
+.padding-left-5 {
+    padding-left: 5px !important;
+}
+
+.padding-left-10 {
+    padding-left: 10px !important;
+}
+
+.padding-left-15 {
+    padding-left: 15px !important;
+}
+
+.padding-left-20 {
+    padding-left: 20px !important;
+}
+
+.padding-left-25 {
+    padding-left: 25px !important;
+}
+
+.padding-left-30 {
+    padding-left: 30px !important;
+}
+
+.padding-left-35 {
+    padding-left: 35px !important;
+}
+
+.padding-left-40 {
+    padding-left: 40px !important;
+}
+
+.padding-left-45 {
+    padding-left: 45px !important;
+}
+
+.padding-left-50 {
+    padding-left: 50px !important;
+}
+
+
+.padding-right-0 {
+    padding-right: 0px !important;
+}
+
+.padding-right-5 {
+    padding-right: 5px !important;
+}
+
+.padding-right-10 {
+    padding-right: 10px !important;
+}
+
+.padding-right-15 {
+    padding-right: 15px !important;
+}
+
+.padding-right-20 {
+    padding-right: 20px !important;
+}
+
+.padding-right-25 {
+    padding-right: 25px !important;
+}
+
+.padding-right-30 {
+    padding-right: 30px !important;
+}
+
+.padding-right-35 {
+    padding-right: 35px !important;
+}
+
+.padding-right-40 {
+    padding-right: 40px !important;
+}
+
+.padding-right-45 {
+    padding-right: 45px !important;
+}
+
+.padding-right-50 {
+    padding-right: 50px !important;
+}
+
+
+
+.padding-top-0 {
+    padding-top: 0px !important;
+}
+
+.padding-top-5 {
+    padding-top: 5px !important;
+}
+
+.padding-top-10 {
+    padding-top: 10px !important;
+}
+
+.padding-top-15 {
+    padding-top: 15px !important;
+}
+
+.padding-top-20 {
+    padding-top: 20px !important;
+}
+
+.padding-top-25 {
+    padding-top: 25px !important;
+}
+
+.padding-top-30 {
+    padding-top: 30px !important;
+}
+
+.padding-top-35 {
+    padding-top: 35px !important;
+}
+
+.padding-top-40 {
+    padding-top: 40px !important;
+}
+
+.padding-top-45 {
+    padding-top: 45px !important;
+}
+
+.padding-top-50 {
+    padding-top: 50px !important;
+}
+
+.padding-bottom-0 {
+    padding-bottom: 0px !important;
+}
+
+.padding-bottom-5 {
+    padding-bottom: 5px !important;
+}
+
+.padding-bottom-10 {
+    padding-bottom: 10px !important;
+}
+
+.padding-bottom-15 {
+    padding-bottom: 15px !important;
+}
+
+.padding-bottom-20 {
+    padding-bottom: 20px !important;
+}
+
+.padding-bottom-25 {
+    padding-bottom: 25px !important;
+}
+
+.padding-bottom-30 {
+    padding-bottom: 30px !important;
+}
+
+.padding-bottom-35 {
+    padding-bottom: 35px !important;
+}
+
+.padding-bottom-40 {
+    padding-bottom: 40px !important;
+}
+
+.padding-bottom-45 {
+    padding-bottom: 45px !important;
+}
+
+.padding-bottom-50 {
+    padding-bottom: 50px !important;
+}
+
+.bgSeat {
+    background: #eee none repeat scroll 0 0;
+    border-radius: 4px;
+    padding-top: 17px;
+}
+
+@media screen and (min-width: 980px) {
+    /* don't  write css here ! ntien !!!!*/
+    .mbtnPadding {
+        padding: 0px !important;
+    }
+
+    #mInfoBook {
+        display: none;
+    }
+
+    .button-right {
+        float: right;
+    }
+
+    #pageOnlyIphone {
+        display: none;
+    }
+
+    .mbPadding {
+        padding: 0px !important;
+    }
+
+    #pagOnlyMobile {
+        display: none;
+    }
+
+    .button-left {
+        float: left;
+    }
+
+    .widget {
+        box-sizing: content-box;
+        color: #333;
+        margin-bottom: 30px;
+        padding: 0px;
+        position: relative;
+    }
+
+    .pcHeader {
+        padding-bottom: 45px;
+        padding-top: 71px;
+    }
+}
+
+@media screen and (max-width: 979px) {
+    .mbtnPadding {
+        padding: 0px !important;
+    }
+
+    #mInfoBook {
+        display: none;
+    }
+
+    .invisibleOnMobileLogout {
+        display: none !Important;
+    }
+
+    #pageOnlyIphone {
+        display: none;
+    }
+
+    html.top-full .navbar.main {
+        background-color: #007cbc;
+        height: 50px;
+    }
+
+    #pagOnlyMobile {
+        display: none;
+    }
+
+    body {
+        background: #edebe8 !important;
+    }
+
+    .k-scheduler-edit-form .k-edit-form-container, .k-scheduler-timezones .k-edit-form-container {
+        width: 500px;
+    }
+
+    .hidden-sm {
+        display: none !important;
+    }
+
+    .mUserInfo {
+        padding: 15px;
+    }
+
+    .popUp {
+        padding-left: 0px !important;
+    }
+
+    .k-widget .k-window {
+        display: block;
+        left: 7px;
+        min-height: 50px;
+        min-width: 90px;
+        padding-top: 31px;
+        top: 419px;
+        z-index: 10003;
+        width: 100% !important;
+    }
+
+    #logoImage, #mnuPC {
+        display: none;
+    }
+
+    #mnuMobile {
+        display: block;
+    }
+
+    .navbar .navbar-right:last-child {
+        margin-right: 74px;
+    }
+
+    .mw30 {
+        max-width: 60px !important;
+        min-height: 48px;
+    }
+
+    .ctrl-Right {
+        margin-top: 0px;
+    }
+
+    .navbar .navbar-right > li:last-child > a > span {
+        display: inline;
+    }
+
+    .box-user {
+        margin-top: -37px;
+        position: absolute;
+        z-index: -99999;
+    }
+
+    #switchLanguage {
+        display: none;
+    }
+
+    .navbar {
+        border: 1px solid transparent;
+        margin-bottom: 19px;
+        min-height: 43px;
+        position: relative;
+    }
+
+    #divBook {
+        margin-left: -25px;
+    }
+
+    .box-confirm {
+        padding: 0px;
+    }
+
+    .pcHeader {
+        padding-bottom: 0px;
+        padding-top: 0px;
+    }
+
+    .boxMobile {
+        padding-bottom: 5px !important;
+    }
+
+    .headerTitle {
+        padding-left: 15px;
+    }
+
+    #txtnotes {
+        margin-left: 11px;
+        width: 311px;
+    }
+
+    .box-confirm {
+        padding-top: 70px !important;
+    }
+
+    .container {
+        width: 480px;
+    }
+
+    .pcHeader {
+        padding-bottom: 25px;
+        padding-top: 0;
+    }
+
+    .t-info-1 span, .t-info-2 span, .t-info-3 span, .t-info-4 span {
+        font-size: 14px !important;
+        text-transform: uppercase;
+    }
+
+    .mTitleBooking {
+        margin-left: 22px;
+    }
+
+    .mtable {
+        padding: 20px;
+    }
+
+    .widget {
+        background: #fff none repeat scroll 0 0;
+        border: 0px !IMPORTANT;
+        border-radius: 0px !IMPORTANT;
+        box-shadow: 0;
+        margin: 0px !IMPORTANT;
+        position: relative;
+    }
+
+    .mtableCon {
+    }
+
+    .list-group {
+        margin-bottom: 20px;
+        padding-left: 0;
+        padding-right: 10px !important;
+    }
+
+    .mPadtb {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    .mpadd0 {
+        margin-left: -12px;
+    }
+
+    #divWaitList {
+        margin-left: 0px;
+        margin-top: 0px;
+    }
+
+    #divClose {
+        margin-left: 0px;
+    }
+
+    .mbtn {
+        margin-bottom: 7px;
+    }
+
+    .header-registration {
+        padding: 0px;
+        margin: 0px;
+    }
+
+        .header-registration .panel {
+            background-color: transparent;
+            border: medium none;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            position: sticky;
+            z-index: 9999;
+            box-shadow: none !important;
+        }
+
+    .container {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .panel-body {
+        padding: 0px;
+    }
+
+    .mContent {
+        padding: 0px;
+    }
+
+    .mBackground {
+        background-color: transparent;
+        padding: 0px;
+    }
+
+    .sTitle {
+        padding-left: 0px !important;
+    }
+
+    .mLanguage {
+        margin-left: -29px;
+        margin-top: -26px;
+    }
+
+    .mPadd0 {
+        padding: 0px !important;
+    }
+
+    .mLogo {
+        display: none;
+    }
+
+    .input-style {
+        background: #fff none repeat scroll 0 0;
+        border: 1px solid #fff !important;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 500;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        padding-top: 10px;
+        width: 100%;
+    }
+
+    .mRemember {
+        display: none;
+    }
+
+    .header-registration .panel-heading {
+        height: 0;
+        position: absolute;
+        z-index: 9999999;
+    }
+
+    .mbPadding {
+        padding: 0px !important;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    /* ui Tab for Mobile*/
+    #mysearch {
+        display: inline;
+        padding-right: 0 !important;
+    }
+
+    #lstSeat a.list-group-item .list-group-item-heading {
+        color: #000;
+        text-align: center !important;
+    }
+
+    #mInfoBook {
+        display: inherit;
+    }
+
+    .itemPadding {
+        background: #fffafa none repeat scroll 0 0;
+        margin-bottom: 6px !important;
+        padding: 21px 15px !important;
+    }
+
+    #lstSeat a.list-group-item:hover, #lstSeat a.list-group-item:focus {
+        background-color: #43CD80;
+        color: #fff !important;
+        text-decoration: none;
+    }
+
+
+    body {
+        background: #fff none repeat scroll 0 0 !important;
+    }
+
+    .alert.alert-rounded {
+        border-radius: 100px;
+        padding-left: 25px;
+        padding-right: 25px;
+    }
+
+    .alert-danger, .alert-danger .close {
+        color: #9c1f1f;
+    }
+
+    .alert {
+        position: relative;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .alert-danger {
+        background-color: #fbe9e7;
+        border-color: #ff5722;
+        color: #d84315;
+    }
+
+    .alert {
+        padding: 15px;
+        margin-bottom: 20px;
+        border: 1px solid transparent;
+        border-radius: 3px;
+    }
+
+    .invisibleOnMobileLogout {
+        display: none !Important;
+    }
+
+    #pageOnlyIphone {
+        display: inherit;
+    }
+
+    .mbPadding {
+        padding: 20px !important;
+    }
+
+    .mbtnPadding {
+        padding: 15px !important;
+    }
+
+    .mail_widget .mail_list {
+        background: #ffffff none repeat scroll 0 0;
+         
+        overflow-y: scroll;
+        padding-top: 0px;
+        position: relative;
+    }
+
+        .mail_widget .mail_list .mails_holder {
+            margin-bottom: 0;
+            
+            overflow: auto;
+            padding: 0;
+            position: relative;
+            z-index: 0;
+        }
+
+    .list-unstyled {
+        list-style: outside none none;
+        padding-left: 0;
+    }
+
+    .mail_widget .mail_list .mails_holder li a .message_list_block {
+        padding-left: 10px;
+        padding-top: 20px;
+        position: relative;
+    }
+
+    .mail_widget .mail_list .mails_holder li a .right .right_details {
+        color: #b8c1d1;
+        font-size: 12px;
+    }
+
+    .pull-right {
+        float: right;
+    }
+
+    .mail_widget .mail_list .mails_holder li a .right h4 {
+        color: #707780;
+        font-size: 13px;
+        font-weight: 300;
+        height: 20px;
+        margin: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .list-inline {
+        list-style: outside none none;
+        margin-left: -5px;
+        padding-left: 0;
+    }
+
+    .list-unstyled {
+        list-style: outside none none;
+        padding-left: 0;
+    }
+
+    .mail_widget .mail_list .mails_holder li a {
+        background: #ffffff none repeat scroll 0 0;
+        border-bottom: 1px solid #e9ecf2;
+        
+        padding: 0;
+        text-decoration: none;
+        width: 100%;
+    }
+
+    #pageTablet {
+        display: none;
+    }
+
+    .badge {
+        background-color: #f7941d;
+        border-radius: 10px;
+        color: #ffffff;
+        display: inline-block;
+        font-size: 12px;
+        font-weight: 600;
+        line-height: 1;
+        min-width: 10px;
+        padding: 3px 7px;
+        text-align: center;
+        vertical-align: baseline;
+        white-space: nowrap;
+    }
+
+    .tabs {
+        background-color: #fff;
+        height: 48px;
+        margin: 0 auto;
+        padding: 0;
+        position: relative;
+        white-space: nowrap;
+        width: 100%;
+    }
+
+        .tabs li.tab {
+            background-color: #fff;
+            display: block;
+            float: left;
+            height: 48px;
+            letter-spacing: 0.8px;
+            line-height: 48px;
+            margin: 0;
+            padding: 0 20px;
+            text-align: center;
+            text-transform: uppercase;
+            width: 15%;
+        }
+
+            .tabs li.tab a {
+                color: #9398a0;
+                display: block;
+                height: 100%;
+                text-decoration: none;
+                transition: color 0.28s ease 0s;
+                width: 100%;
+            }
+
+                .tabs li.tab a:hover {
+                    color: #2196f3;
+                }
+
+                .tabs li.tab a.active {
+                    color: #2196f3;
+                }
+
+        .tabs .indicator {
+            background-color: #2196f3;
+            bottom: 0;
+            height: 2px;
+            position: absolute;
+            will-change: left, right;
+        }
+
+    .mail_widget .tab {
+        border-bottom: 1px solid #e9ecf2;
+    }
+
+    ul.tabs li.tab {
+        padding: 0;
+    }
+
+    #pagOnlyMobile {
+        display: inherit;
+    }
+
+    #pcContentBookConfirm {
+        display: none;
+    }
+
+
+
+    .popUp {
+        padding-left: 0px !important;
+    }
+
+    .k-scheduler-edit-form .k-edit-form-container, .k-scheduler-timezones .k-edit-form-container {
+        width: 100%;
+    }
+
+    .mUserInfo {
+        padding: 15px;
+    }
+
+    .k-widget .k-window {
+        display: block;
+        left: 7px;
+        min-height: 50px;
+        min-width: 90px;
+        padding-top: 31px;
+        top: 419px;
+        z-index: 10003;
+        width: 100% !important;
+    }
+
+    #logoImage, #mnuPC {
+        display: none;
+    }
+
+    #mnuMobile {
+        display: block;
+    }
+
+    .navbar .navbar-right:last-child {
+        margin-right: 74px;
+    }
+
+    .mw30 {
+        max-width: 60px !important;
+        min-height: 48px;
+    }
+
+    .ctrl-Right {
+        margin-top: 0px;
+    }
+
+    .navbar .navbar-right > li:last-child > a > span {
+        display: inline;
+    }
+
+    .box-user {
+        margin-top: -37px;
+        position: absolute;
+        z-index: -99999;
+    }
+
+    #switchLanguage {
+        display: none;
+    }
+
+    .navbar {
+        border: 1px solid transparent;
+        margin-bottom: 19px;
+        min-height: 43px;
+        position: relative;
+    }
+
+    #divBook {
+        margin-left: -25px;
+    }
+
+    .box-confirm {
+        padding: 0px;
+    }
+
+    .pcHeader {
+        padding-bottom: 0px;
+        padding-top: 0px;
+    }
+
+    .boxMobile {
+        padding-bottom: 5px !important;
+    }
+
+    .headerTitle {
+        padding-left: 15px;
+    }
+
+    #txtnotes {
+        margin-left: 11px;
+        width: 311px;
+    }
+
+    .box-confirm {
+        padding: 0 !important;
+    }
+
+    .container {
+        width: 480px;
+    }
+
+    .pcHeader {
+        padding-bottom: 0px;
+        padding-top: 0px;
+        margin-left: 0px !important;
+    }
+
+    .mTitleBooking {
+        margin-left: 22px;
+    }
+
+    .mtable {
+        padding: 20px;
+    }
+
+    .widget {
+        background: #fff none repeat scroll 0 0;
+        border: 0px !IMPORTANT;
+        border-radius: 0px !IMPORTANT;
+        box-shadow: 0;
+        margin: 0px !IMPORTANT;
+        position: relative;
+    }
+
+    .mtableCon {
+    }
+
+    .list-group {
+        margin-bottom: 20px;
+        padding-left: 0;
+        padding-right: 10px !important;
+    }
+
+    .mPadtb {
+        padding-top: 0px;
+        padding-bottom: 0px;
+    }
+
+    .mpadd0 {
+        margin-left: -12px;
+    }
+
+    #divWaitList {
+        margin-left: -38px;
+        margin-top: 10px;
+    }
+
+    #divClose {
+        margin-left: -38px;
+    }
+
+    .mbtn {
+        margin-bottom: 7px;
+    }
+
+    .header-registration {
+        padding: 0px;
+        margin: 0px;
+    }
+
+        .header-registration .panel {
+            background-color: transparent;
+            border: medium none;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            position: sticky;
+            z-index: 9999;
+            box-shadow: none !important;
+        }
+
+    .container {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    .panel-body {
+        padding: 0px;
+    }
+
+    .mContent {
+        padding: 0px;
+    }
+
+    .mBackground {
+        background-color: transparent;
+        padding: 0px;
+    }
+
+    .sTitle {
+        padding-left: 0px !important;
+    }
+
+    .mLanguage {
+        margin-left: -29px;
+        margin-top: -26px;
+    }
+
+    .mPadd0 {
+        padding: 0px !important;
+    }
+
+    .mLogo {
+        display: none;
+    }
+
+    .input-style {
+        background: #fff none repeat scroll 0 0;
+        border: 1px solid #b8c1d1 !important;
+        border-radius: 5px;
+        font-size: 14px;
+        font-weight: 500;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        padding-top: 10px;
+        width: 100%;
+    }
+
+    .mRemember {
+        display: none;
+    }
+
+    .header-registration .panel-heading {
+        height: 0;
+        position: absolute;
+        z-index: 9999999;
+    }
+
+    .t-info-1, .t-info-2, .t-info-3, .t-info-4 {
+        height: 69px !important;
+    }
+
+    .widget-info .widget-info-details h4 {
+        font-size: 14px;
+    } 
+}

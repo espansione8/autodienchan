@@ -1,0 +1,23 @@
+﻿@charset "utf-8";
+/* CSS Document */
+
+.page-content {
+	min-height:300px;
+	margin-bottom: 20px;
+}
+
+.logo img {
+	margin-top:-7px;
+}
+
+label.error {
+	color:#F00;
+}
+
+.submit {
+	margin-top: 10px;
+}
+
+.i4go-debug {
+	background-color:#FF0;
+}

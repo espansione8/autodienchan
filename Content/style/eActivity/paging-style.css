@@ -1,0 +1,105 @@
+﻿.pace-active-effect {
+    background: #fafafa none repeat scroll 0 0;
+}
+.pace-effect-1 .pace-progress {
+    background: #ffc20a none repeat scroll 0 0;
+}
+.pace-effect-2 .pace-progress {
+    background: #ffc20a none repeat scroll 0 0;
+}
+.pace-effect-2 .pace-progress-inner {
+    box-shadow: 0 0 10px #ffc20a, 0 0 5px #ffc20a;
+}
+.pace-effect-2 .pace-activity {
+    border-left-color: #ffc20a;
+    border-top-color: #ffc20a;
+}
+.pace-effect-3 .pace-progress {
+    background-color: #ffc20a;
+}
+.pace-effect-3 .pace-activity {
+    background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.2) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.2) 75%, transparent 75%, transparent);
+}
+.pace-effect-4 .pace-progress {
+    background-color: rgba(255, 194, 10, 0.2);
+}
+.pace-effect-5 .pace-progress::after {
+    color: rgba(255, 194, 10, 0.5);
+}
+.pace-effect-6 .pace-activity {
+    background: #ffc20a none repeat scroll 0 0;
+}
+.pace-effect-6 .pace-activity::before, .pace-effect-6 .pace-activity::after {
+    border: 5px solid #fff;
+}
+.pace-effect-6 .pace-activity::before {
+    border-left-color: rgba(0, 0, 0, 0.2);
+    border-right-color: rgba(0, 0, 0, 0.2);
+}
+.pace-effect-6 .pace-activity::after {
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+    border-top-color: rgba(0, 0, 0, 0.2);
+}
+.pace-effect-7 .pace-activity {
+    background: #ffc20a none repeat scroll 0 0;
+}
+.pace-effect-7 .pace-progress {
+    background: rgba(20, 20, 20, 0.1) none repeat scroll 0 0;
+    box-shadow: 0 0 20px 35px rgba(20, 20, 20, 0.1);
+}
+.pace-effect-8 .pace-progress {
+    background: #ffc20a none repeat scroll 0 0;
+    box-shadow: 120px 0 #fff, 240px 0 #fff;
+    color: #ffc20a;
+}
+.pace-effect-8 .pace-activity {
+    box-shadow: 0 0 0 2px #ffc20a inset, 0 0 0 7px #fff inset;
+}
+.pace-effect-9 {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #ffc20a;
+}
+.pace-effect-9 .pace-progress {
+    background: #ffc20a none repeat scroll 0 0;
+}
+.pagination > li > a, .pagination > li > span {
+    background-color: #fff;
+    border: 1px solid #ededed;
+    color: #535353;
+}
+.pagination > li > a:hover, .pagination > li > a:focus, .pagination > li > span:hover, .pagination > li > span:focus {
+    background-color: #ffc20a;
+    border-color: #ffc20a;
+    color: #fff;
+}
+.pagination > .active > a, .pagination > .active > a:hover, .pagination > .active > a:focus, .pagination > .active > span, .pagination > .active > span:hover, .pagination > .active > span:focus {
+    background-color: #535353;
+    border-color: #535353;
+    color: #fff;
+}
+.pagination > .disabled > span, .pagination > .disabled > span:hover, .pagination > .disabled > span:focus, .pagination > .disabled > a, .pagination > .disabled > a:hover, .pagination > .disabled > a:focus {
+    background-color: #f4f4f4;
+    border-color: #ededed;
+    color: #aaa;
+}
+.pager li > a, .pager li > span {
+    background-color: #fff;
+    border: 1px solid #ededed;
+    color: #535353;
+}
+.pager li > a:hover, .pager li > a:focus {
+    background-color: #ffc20a;
+    border: 1px solid #ffc20a;
+    color: #fff;
+}
+.pager .disabled > a, .pager .disabled > a:hover, .pager .disabled > a:focus, .pager .disabled > span {
+    background-color: #f4f4f4;
+    border: 1px solid #ededed;
+    color: #aaa;
+}
+.active-paged
+{
+        background-color: #ffc20a !important;
+    border-color: #ffc20a !important;
+    color: #fff !important;
+}

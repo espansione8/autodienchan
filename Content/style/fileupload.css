@@ -1,0 +1,277 @@
+﻿input[type='file'].hidden {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    font-size: 50px;
+    cursor: pointer;
+    opacity: 0;
+    -moz-opacity: 0;
+    filter: Alpha(Opacity=0);
+}
+
+img.fileDownload {
+    height: 200px;
+    width: 200px;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 4px 0 0;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+div.hiddenFileInputContainter {
+    position: relative;
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+.ic-save {
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #5cb85c;
+    background-image: url("../../Images/ic-save.png") !important;
+    background-origin: padding-box;
+    background-position: 40px center;
+    background-repeat: no-repeat;
+}
+
+.accordion .panel .accordion-toggle .ic-activity {
+    background: url("/../Images/activity.png") no-repeat 0px -5px transparent;
+    height: 30px;
+    position: absolute;
+    width: 30px;
+}
+
+.accordion .panel.open .accordion-toggle .ic-activity {
+    background: url("/../Images/activity-active.png") no-repeat 0px -5px transparent;
+    height: 30px;
+    position: absolute;
+    width: 30px;
+}
+
+.accordion .panel .accordion-toggle .span-activity {
+    color: #7c7c7c;
+    margin-left:30px;
+}
+
+.accordion .panel.open .accordion-toggle .span-activity {
+    color: #fff;
+    margin-left:30px;
+}
+.accordion .panel .accordion-toggle .ic-transaction {
+    background: url("/../Images/Transaction.png") no-repeat 0px -5px transparent;
+    height: 30px;
+    position: absolute;
+    width: 30px;
+}
+.accordion .panel.open .accordion-toggle .ic-transaction {
+    background: url("/../Images/Transaction-activity.png") no-repeat 0px -5px transparent;
+    height: 30px;
+    position: absolute;
+    width: 30px;
+}
+input.ic-save:hover, input.ic-save:focus, input.ic-save:active {
+    background-repeat: no-repeat;
+    background-position: 40px center;
+}
+/*css for left menu in System Parameter*/
+.boxleftmenu .panel-body {
+    padding: 0px;
+}
+
+    .boxleftmenu .panel-body table tr td {
+        padding-left: 30px;
+    }
+
+    .boxleftmenu .panel-body .table {
+        margin-bottom: 0px;
+    }
+
+.boxleftmenu .panel-default > .panel-heading {
+    background-color: #fff;
+    border-color: #ddd;
+    color: #4d4d4d;
+    padding: 0;
+}
+
+    .boxleftmenu .panel-default > .panel-heading:hover {
+        background-color: #EFEFEF;
+        color: #4d4d4d;
+    }
+
+    .boxleftmenu .panel-default > .panel-heading i {
+        background: none repeat scroll 0 0 #f5f5f5;
+        border-right: 1px solid #ddd;
+        padding: 9px;
+        width: 35px;
+    }
+
+    .boxleftmenu .panel-default > .panel-heading span {
+        color: #4d4d4d;
+        font-style: normal;
+        padding-left: 10px;
+    }
+
+.boxleftmenu .panel-heading a:hover, .boxleftmenu .panel-heading a:focus, .boxleftmenu .panel-heading a:active {
+    text-decoration: none;
+}
+
+.boxmenu {
+    background: none repeat scroll 0 0 rgba(205, 205, 205, 0.2);
+    border-radius: 5px;
+    padding: 15px !important;
+}
+
+.well-gold {
+    background-color: #fff;
+    border-radius: 0;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05) inset;
+    margin-bottom: 20px;
+    min-height: 20px;
+    padding: 0 19px 19px 10px;
+}
+
+    .well-gold table {
+        width: 100%;
+        border-bottom: 1px solid #ddd;
+    }
+
+        .well-gold table td {
+            border-top: 1px solid #ddd;
+        }
+
+            .well-gold table td h3 {
+                margin: 0 auto;
+                padding-bottom: 5px;
+                padding-left: 20px;
+                padding-top: 5px;
+            }
+
+.contenttip {
+    font-style: italic;
+    margin: 0 auto;
+    padding-bottom: 2px;
+    padding-left: 30px;
+    padding-top: 2px;
+}
+
+.titlesetting {
+    color: #4d4d4d;
+    font-weight: 700;
+    margin: 0 auto;
+    padding-top: 17px;
+}
+
+.valuesetting {
+    color: #276995;
+    font-style: italic;
+    font-weight: bold;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+.valuesub {
+    color: #7b7b7b;
+    font-size: 12px;
+}
+
+.paddtb10 {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+/*end css for left menu*/
+
+.input-field .k-state-disabled {
+    background: none repeat scroll 0 0 #eeeeee !important;
+}
+
+.paddlr20 {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.paddlr15 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.paddlr10 {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.show_notify {
+    background: none repeat scroll 0 0 #1abc9c;
+    height: 40px;
+}
+
+    .show_notify label {
+        clear: both;
+        color: #fff;
+        font-size: 16px;
+        font-weight: bold;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        padding-bottom: 8px;
+        padding-top: 8px;
+    }
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1300px) {
+    .ic-save {
+        background-attachment: scroll;
+        background-clip: border-box;
+        background-color: #5cb85c;
+        background-image: url("/Images/ic-save.png") !important;
+        background-origin: padding-box;
+        background-position: 15px center;
+        background-repeat: no-repeat;
+    }
+
+    input.ic-save:hover, input.ic-save:focus, input.ic-save:active {
+        background-repeat: no-repeat;
+        background-position: 15px center;
+    }
+
+    #page-sidebar {
+        background: none repeat scroll 0 0 #f6f6f6;
+        bottom: 20px !important;
+        box-shadow: 0 0 35px 8px #ccc;
+        left: -485px;
+        padding-left: 20px !important;
+        position: absolute !important;
+        top: 0px !important;
+        transition: left 0.5s ease 0s;
+        z-index: 999;
+        padding-top: 15px;
+        overflow: auto !important;
+        padding-bottom: 30px !important;
+        height: 100% !important;
+    }
+
+        #page-sidebar .sidebar-wrapper {
+            min-height: 750px;
+            overflow: hidden !important;
+            padding-bottom: 30px !important;
+            position: absolute;
+            height: 100%;
+        }
+
+    .boxleftmenu .panel-default > .panel-heading span {
+        color: #4d4d4d;
+        font-size: 12px;
+        font-style: normal;
+        font-weight: bold;
+        padding-left: 10px;
+    }
+}

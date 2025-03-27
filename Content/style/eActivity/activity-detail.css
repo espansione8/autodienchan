@@ -1,0 +1,434 @@
+﻿.modal {
+    bottom: 0;
+    display: none;
+    left: 0;
+    outline: 0 none;
+    overflow-x: auto;
+    overflow-y: scroll;
+    position: fixed;
+    right: 0;
+    top: 45px;
+    z-index: 1050;
+}
+
+.innerLR .modal-header {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border-bottom: 1px solid #e5e5e5;
+    min-height: 16.4286px;
+    padding: 15px;
+}
+
+    .innerLR .modal-header .modal-title {
+        color: #d9534f;
+    }
+
+/*.modal-body {
+    background: #d8dce3 none repeat scroll 0 0;
+    padding: 10px;
+    position: relative;
+}*/
+
+.list-group {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    padding-left: 0;
+}
+
+.panel-inverse {
+    border-color: transparent;
+}
+
+.panel {
+    background-color: #fff;
+    border: 0 none;
+    border-radius: 2px;
+    box-shadow: none;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.panel-inverse > .panel-heading {
+    background-color: #505b72;
+    border-color: transparent;
+    color: #ffffff;
+}
+
+.panel-default .panel-heading, .panel-primary .panel-heading, .panel-success .panel-heading, .panel-warning .panel-heading, .panel-danger .panel-heading, .panel-info .panel-heading, .panel-inverse .panel-heading {
+    border-bottom: 0 none;
+    padding-bottom: 15px;
+    padding-top: 15px;
+}
+
+.panel-heading {
+    border-top-left-radius: 2px;
+    border-top-right-radius: 2px;
+    margin-bottom: 0;
+}
+
+.user-list {
+    margin-bottom: 0;
+}
+
+    .user-list .media {
+        padding: 12px 0;
+    }
+
+        .user-list .media + .media {
+            border-top: 1px solid #eaecf0;
+            margin: 0;
+        }
+
+        .user-list .media:first-child {
+            padding-top: 0;
+        }
+
+        .user-list .media:last-child {
+            padding-bottom: 0;
+        }
+
+    .user-list .media-left {
+        padding-right: 10px;
+    }
+
+    .user-list .media-object {
+        border: 2px solid #dbdfe6;
+        padding: 2px;
+        width: 42px;
+    }
+
+    .user-list .media-body .media-heading {
+        margin: 2px 0;
+    }
+
+        .user-list .media-body .media-heading > a {
+            color: #3b4354;
+            font-size: 12px;
+            font-weight: 700;
+            transition: all 0.2s ease-out 0s;
+        }
+
+            .user-list .media-body .media-heading > a:hover, .user-list .media-body .media-heading > a:focus {
+                color: #259dab;
+            }
+
+    .user-list .media-body span {
+        color: #259dab;
+        font-weight: 500;
+    }
+
+    .user-list .media-body small.date {
+        color: #818da7;
+        display: block;
+        font-size: 11px;
+        margin-top: 2px;
+    }
+
+        .user-list .media-body small.date > i {
+            margin-right: 2px;
+            vertical-align: baseline;
+        }
+
+    .user-list .media-body a {
+        font-weight: 500;
+    }
+
+.panel-title-box {
+    color: #fff !important;
+    font-size: 13px !important;
+}
+
+.user-list .media-left {
+    padding-right: 10px;
+}
+
+.media-left, .media > .pull-left {
+    padding-right: 20px;
+}
+
+.media-left, .media-right, .media-body {
+    display: table-cell;
+    vertical-align: top;
+}
+
+.media-left, .media > .pull-left {
+    padding-right: 10px;
+    color: #fff;
+    font-size: 13px;
+}
+
+.box-guest {
+    padding-bottom: 5px !important;
+    padding-top: 5px !important;
+}
+
+
+.media-list-contacts {
+    margin-bottom: 0;
+}
+
+    .media-list-contacts .media {
+        /*border-top: 1px solid #eaecf0;*/
+    }
+
+        .media-list-contacts .media .media-left {
+            padding-right: 15px;
+        }
+
+        .media-list-contacts .media .media-object {
+            border: 2px solid #eaecf0;
+            padding: 2px;
+            width: 40px;
+        }
+
+        /*.media-list-contacts .media a {
+            display: block;
+            padding: 10px 15px;
+            transition: all 0.2s ease-out 0s;
+        }*/
+
+            .media-list-contacts .media a:hover, .media-list-contacts .media a:focus {
+                background-color: #f3f4f7;
+            }
+
+                .media-list-contacts .media a:hover .media-object, .media-list-contacts .media a:focus .media-object, .media a:hover .hover-btn {
+                    border-color: #ccd1db;
+                    display: block;
+                }
+
+        .media-list-contacts .media .media-body {
+            color: #9fa8bc;
+            font-size: 11px;
+            padding-top: 10px;
+        }
+
+            .media-list-contacts .media .media-body i {
+                color: #409a32;
+            }
+
+            .media-list-contacts .media .media-body .fa-skype {
+                color: #00aff0;
+            }
+
+        .media-list-contacts .media .media-heading {
+            color: #3b4354;
+            font-size: 12px;
+            margin: 3px 0 2px;
+        }
+
+        .media-list-contacts .media + .media {
+            margin-top: 0;
+        }
+
+.media a {
+    color: #259dab;
+    text-decoration: none;
+}
+
+.addGuest {
+    float: right;
+    margin-right: -11px;
+    margin-top: -25px;
+    cursor: pointer;
+}
+
+.grid li {
+    float: left;
+    width: 20%;
+    height: 50px;
+    border-right: 1px dotted #CCC;
+    border-bottom: 1px dotted #CCC;
+    padding: 20px;
+}
+
+.activity-guest li {
+    border: 1px dashed #000;
+    float: left;
+    height: 83px;
+    margin-bottom: 15px;
+    margin-left: 24px;
+    width: 421px;
+}
+
+.checkOut {
+    margin-left: 314px;
+    margin-top: 0;
+    position: absolute;
+}
+
+.status-checkOut {
+    background: #f1e0ce;
+}
+
+.status-checkIn {
+    background: #aad6a5;
+}
+
+.status-reserve {
+    background: #fff;
+}
+
+.status-addMore {
+    background: #8696b7;
+}
+
+.color-checkout {
+    color: red;
+}
+
+.color-checkIn {
+    color: #14a02c;
+}
+
+.color-reserve {
+    color: #d9534f;
+}
+
+.status-checkIn .media-body span {
+    color: white;
+}
+
+.hBtn {
+    position: relative;
+}
+
+.pageDiv {
+    margin-left: 41px;
+    position: absolute;
+}
+
+.btnLeft {
+    font-size: 12px;
+    margin-left: -54px;
+    margin-top: -31px !important;
+    position: absolute;
+}
+
+.hover-btn {
+    display: none;
+    margin-top: -67px;
+    position: absolute;
+    right: 10px;
+    width: 29px;
+}
+
+.buttonsp {
+    width: 50px !important;
+}
+
+.hover-btnAction {
+    background: rgba(0, 0, 0, 0.52) none repeat scroll 0 0;
+    border: 1px dashed yellow;
+    border-radius: 2px;
+    display: none;
+    margin-top: -60px;
+    padding: 46px 17px 57px 175px;
+    /*position: absolute;*/
+    transition: background-color 0.5s ease 0s;
+    width: 420px;
+}
+
+.group-action:hover .hover-btnAction {
+    display: block;
+    cursor: pointer;
+}
+
+.hover-btnAction .btn-icon, .hover-btnAction .btn.icon {
+    line-height: 1em;
+    padding: 5px !important;
+}
+
+.explain-button:hover .hover-btn {
+    display: block;
+}
+
+
+/*label {
+        color: #000;
+        cursor: pointer;
+        font-size: 13px;
+        margin-right: 10px;
+        position: relative;
+        right: -1px;
+        top: 15px;
+        white-space: nowrap;
+    }*/
+
+.box-searchGuest {
+    border: 1px dashed;
+    margin-left: 31px !important;
+    margin-right: 26px !important;
+    padding: 20px;
+}
+
+.btn-round {
+    border-radius: 1000px;
+}
+
+.btn-primary {
+    border-color: none !Important;
+}
+
+.app-Guest {
+    position: relative;
+}
+
+.list-inline {
+    margin-left: 0;
+    font-size: 0;
+}
+
+.list-inline {
+    padding-left: 0;
+    list-style: none;
+    margin-left: -5px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.list-inline > li {
+    padding-left: 0;
+    padding-right: 20px;
+    font-size: 13px;
+}
+
+.btn-icon.btn-xs, .input-group-xs > .input-group-btn > .btn.btn-icon {
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.text-teal, .text-teal:hover, .text-teal:focus {
+    color: #009688;
+}
+
+.border-teal {
+    border-color: #009688;
+}
+
+.badge {
+    background-color: #d9534f !important;
+    border-radius: 10px;
+    color: #fff;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1;
+    min-width: 10px;
+    padding: 3px 7px;
+    text-align: center;
+    vertical-align: baseline;
+    white-space: nowrap;
+}
+
+.fa {
+    padding-left: 6px;
+    padding-right: 6px;
+}
+.padding-cancellist
+{
+     border-bottom: 1px solid #ccc;
+    padding-bottom: 8px;
+    padding-top: 10px;
+}

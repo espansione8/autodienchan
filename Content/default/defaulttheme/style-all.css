@@ -1,0 +1,498 @@
+﻿@import url('font-awesome.min.css');
+@import url('bootstrap.min.css');
+@import url('morris.css');
+@import url('target-admin.css');
+@import url('health.css');
+@import url('kendo.common.min.css');
+@import url('kendo.default.min.css');
+@import url('select2.css');
+/*@import url('core.css');*/
+table {
+    font-size: 14px;
+}
+
+.survey-title {
+    color: #ff5d05;
+}
+
+.no-padding {
+    padding: 0px;
+    margin-top: 15px;
+}
+
+#box-info {
+    margin-top: 15px;
+}
+
+.box-new-survey {
+    border-bottom: 0.5px dotted #ccc;
+    margin-bottom: 23px;
+    padding-bottom: 16px;
+}
+
+    .box-new-survey p {
+        font-size: 13px;
+    }
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.font-lable {
+    font-weight: normal;
+}
+
+.btnStandart {
+    width: 170px;
+}
+
+#DataTables_Table_0_wrapper table tbody tr {
+    cursor: pointer;
+}
+
+.icon-padding {
+    margin-left: 11px;
+}
+
+.box-1 {
+    color: #2f78b7;
+}
+
+.box-2 {
+    color: #2f78b7;
+}
+
+.box-3 {
+    color: #71a224;
+}
+
+.box-4 {
+    color: #cd3f0d;
+}
+
+/*ABOUT YOU*/
+.aboutyou {
+    background: none repeat scroll 0 0 black;
+    color: white;
+    font-weight: bold;
+    height: 40px;
+    line-height: 41px;
+    padding-left: 9px;
+}
+
+.nopadding-about {
+    padding: 0;
+    width: 68px;
+    margin-top: 8px;
+}
+
+.widths {
+    width: 194px;
+}
+
+.width-check {
+    margin-top: 10px;
+    width: 130px;
+}
+
+.special-width {
+    width: 212px;
+}
+
+.width-oc {
+    width: 352px;
+}
+
+.width-fi {
+    width: 267px;
+}
+
+.btn_delete {
+    background: none repeat scroll 0 0 #1abc9c;
+    color: #fff;
+    width: 100px;
+    margin-right: 20px;
+}
+
+.btn_Cancel {
+    background: none repeat scroll 0 0 #384959;
+    color: #fff;
+    width: 100px;
+}
+
+.div-padding {
+    margin-bottom: 12px;
+}
+
+.form-group-about input {
+    border: none;
+    border-radius: 0px;
+    border-bottom: 1px solid #ccc;
+}
+/*END*/
+label {
+    display: inline-block;
+    font-weight: normal !important;
+    margin-bottom: 5px;
+}
+
+.form-control {
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #555;
+    display: block;
+    font-size: 14px;
+    height: 34px;
+    line-height: 1.42857;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+    width: 100%;
+}
+
+.survey-page-header > .title_subSurvey a.k-button {
+    color: #000;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.title_subSurvey {
+    text-align: center;
+}
+
+.greeting_section {
+    color: #000;
+    /*margin-bottom: 34px;*/
+}
+
+.form-view-title {
+    border-bottom: 1px dotted #ccc;
+    margin-top: 32px;
+}
+
+.header-title {
+    color: white;
+    margin-top: 43px;
+    padding-right: 0;
+    text-align: right;
+}
+
+.acContent {
+    background: none repeat scroll 0 0 #9e9b90;
+    border-top: 1px solid transparent;
+    display: block;
+    position: relative;
+}
+
+.setting {
+    margin: 5px 5px 5px 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.addList {
+    height: auto;
+    list-style: outside none none;
+    margin: 0 0 5px;
+    padding: 0 2.75% 0 3.5%;
+}
+
+    .addList > li {
+        font-weight: normal;
+        background: none repeat scroll 0 0 #eaeae8;
+        border-radius: 5px;
+        height: 20px;
+        padding-bottom: 5px;
+        padding-top: 5px;
+    }
+
+
+#organizer {
+    background: none repeat scroll 0 0 #fff;
+    border: 12px solid rgba(195, 200, 204, 0.3);
+    margin: 0 auto;
+    padding: 47px 0 0;
+}
+
+#bottom {
+    height: 90px;
+    /*background: url('http://demos.telerik.com/kendo-ui/content/web/panelbar/orgFoot.png') transparent no-repeat 0 0;*/
+}
+
+.teamMate:after {
+    content: ".";
+    display: block;
+    height: 0;
+    line-height: 0;
+    clear: both;
+    visibility: hidden;
+}
+
+.teamMate h2 {
+    font-size: 1.4em;
+    font-weight: normal;
+    padding-top: 20px;
+}
+
+.teamMate p {
+    margin: 5px 0;
+}
+
+.teamMate img {
+    float: left;
+    margin: 5px 15px 5px 5px;
+    border: 1px solid #ccc;
+}
+
+.survey-page:before, .survey-page:after {
+    bottom: 10px;
+    box-shadow: 0 8px 10px #777;
+    content: "";
+    height: 10px;
+    left: 10px;
+    position: absolute;
+    z-index: -1;
+}
+
+.survey-page-header > .title_subSurvey a.k-button {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 #fff;
+    border-color: #fff -moz-use-text-color -moz-use-text-color;
+    border-image: none;
+    border-radius: 0;
+    border-right: medium none;
+    border-style: solid none none;
+    border-width: 1px medium medium;
+    font-family: PT Sans;
+    font-size: 20px;
+    font-weight: bold;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    padding-top: 5px;
+    text-align: center;
+    width: 100%;
+}
+
+.editinput {
+    border: 1px solid #cdcdcd;
+    border-radius: 5px;
+    height: 35px;
+    padding-left: 15px;
+    width: 96%;
+}
+
+.btn {
+    border: medium none;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+    .btn a.k-button {
+        border: 1px solid #dedede;
+        color: #fff;
+        margin-right: 10px;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+.btnSave {
+    background: none repeat scroll 0 0 #1abc9c;
+}
+
+.btnCancel {
+    background: none repeat scroll 0 0 #808080;
+}
+
+.editinputMulti {
+    border: 1px solid #cdcdcd;
+    width: 96%;
+}
+
+.ttp, .err, .errS {
+    clear: both;
+    color: #666;
+    display: block;
+    font-size: 11px;
+    line-height: 12px;
+    padding: 5px 0 0;
+}
+
+.changeRadCheck {
+    border-top: 1px solid #fff;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.surveyTitleLabel, .pageTitleLabel {
+    color: #333;
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 13px;
+}
+
+.survey-page .question-title-container {
+    color: #000000;
+    font-size: medium;
+    font-style: normal;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.survey-header-title {
+    color: #333;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-bottom: 5px;
+    text-align: center;
+    padding-top: 10px;
+}
+
+#livePreview {
+    float: left;
+    margin: 0 auto;
+    position: relative;
+}
+
+#sidebar {
+    /*background: none repeat scroll 0 0 #333;*/
+    border-radius: 15px;
+    float: left;
+    margin: 0 0 16px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    position: relative;
+    /*width: 25.61%;*/
+}
+
+#lastSaved, #switchBack {
+    color: #333;
+    display: inline-block;
+    font-size: 11px;
+    margin: 2px 6px 0 0;
+}
+
+.iconspan {
+    color: #333;
+    padding-right: 5px;
+}
+
+.editingSurvey a.k-button {
+    border: 1px solid #999;
+    color: #333;
+    margin-right: 10px;
+    padding-left: 18px;
+}
+
+.question-container {
+    /*border: 1px dashed #87c7c9;*/
+    border-radius: 5px;
+    height: auto;
+    display: table;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.question_option {
+    /*background: none repeat scroll 0 0 rgba(151, 222, 212, 0.3);
+        border-radius: 5px;*/
+    height: auto;
+    min-height: 175px;
+    position: absolute;
+    z-index: 1;
+    top: 0px;
+    left: 0px;
+}
+
+.bgContentTab {
+    background: none repeat scroll 0 0 #f2f3f3 !important;
+    border: medium none !important;
+    border-radius: 5px;
+    height: auto;
+    margin: 10px !important;
+    padding: 10px !important;
+}
+
+.qNumType, .categoryQues {
+    float: left;
+}
+
+    .qNumType strong {
+        color: #777;
+    }
+
+.ContentAnser {
+    border-top: 1px solid #fff;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+#organizer .k-header .k-state-selected {
+    background-color: transparent !important;
+    font-family: Arial;
+    font-weight: bold;
+    padding-left: 10px;
+    color: #333;
+    box-shadow: none;
+}
+
+div.box-info {
+    float: left;
+    width: 500px;
+}
+
+.box-sendmail {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: 200px;
+    margin-top: 51px;
+}
+/*NEW STYLE*/
+.btn-purple {
+    background-color: #8d82b5;
+    border-color: #6b5f98;
+    color: #fff;
+}
+
+    .btn-purple:hover,
+    .btn-purple:focus,
+    .btn-purple:active,
+    .btn-purple.active,
+    .open .dropdown-toggle.btn-purple {
+        background-color: #6b5f98;
+        color: #fff;
+    }
+
+
+
+.btn-green {
+    background-color: #70ba63;
+    border-color: #579e4b;
+    color: #fff;
+}
+
+    .btn-green:hover,
+    .btn-green:focus,
+    .btn-green:active,
+    .btn-green.active,
+    .open .dropdown-toggle.btn-purple {
+        background-color: #579e4b;
+        color: #fff;
+    }
+
+/*** Btn Shapes ***/
+.btn-circle,
+.form-control-circle,
+.btn-group .btn-circle:first-child:not(:last-child):not(.dropdown-toggle) {
+    border-radius: 50px;
+}
+
+.btn-flat,
+.form-control-flat {
+    border-radius: 0px;
+}

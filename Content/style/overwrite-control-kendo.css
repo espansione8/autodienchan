@@ -1,0 +1,129 @@
+﻿/* Overwhite Combobox Autocomplete control*/
+
+.guestName {
+    margin-right: 22px;
+}
+
+.textM {
+    float: right;
+}
+
+
+
+
+.k-state-hover {
+    background: #808080 !important;
+}
+
+.k-grouping-row td, .k-group-footer td, .k-grid-footer td {
+    border-color: #cee5ff;
+    color: #fff;
+    font-weight: bold;
+}
+.k-grouping-row td, td.k-group-cell, .k-resize-handle-inner {
+    background-color: #89b0db;
+}
+
+.k-grid td {
+    border-style: none !important;
+    border-width: 0 0 0 1px;
+    line-height: 1.6em;
+    overflow: hidden;
+    padding: 0.4em 0.6em;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+}
+
+
+.k-grid-header th.k-header, .k-filter-row th {
+    background: #608dbd none repeat scroll 0 0;
+    border-bottom: 1px solid #edf0f2;
+    color: #fff !important;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 20px;
+    padding: 15px;
+    text-transform: uppercase;
+    vertical-align: middle;
+}
+
+.k-header, .k-treemap-title, .k-grid-header .k-header > .k-link {
+    color: #fff;
+}
+
+div.k-grid-header, div.k-grid-footer {
+    border: none !important;
+    padding-right: 17px;
+}
+
+.k-alt, .k-separator, .k-resource.k-alt, .k-pivot-layout > tbody > tr:first-child > td:first-child {
+    background-color: #fff;
+}
+
+.k-widget {
+    background-color: transparent !important;
+}
+
+.k-grid .k-pager-wrap {
+    text-align: center;
+    padding-right: 1.4em;
+}
+
+    .k-grid .k-pager-wrap > .k-link,
+    .k-grid .k-pager-wrap > .k-pager-numbers {
+        display: inline-block;
+        float: none;
+        margin: 0 .2em;
+        position: static;
+    }
+
+.k-grid .k-pager-info {
+    position: absolute;
+    left: 0;
+    display: none;
+}
+
+.k-header, .k-grid-header, .k-toolbar, .k-dropdown-wrap, .k-picker-wrap, .k-numeric-wrap, .k-grouping-header, .k-pager-wrap,
+.k-textbox, .k-button, .k-progressbar, .k-draghandle, .k-autocomplete, .k-state-highlight,
+.k-tabstrip-items .k-item, .k-panelbar .k-tabstrip-items .k-item, .km-pane-wrapper > .km-pane > .km-view > .km-content {
+    background-color: #e3e3e3;
+    background-image: none;
+    background-position: 50% 50%;
+}
+
+.k-grid-pager {
+    border-width: 0px !important;
+    padding: 23px;
+}
+
+.k-widget, .k-block, .k-inline-block, .k-draghandle {
+    border-style: none !important;
+    border-width: 1px;
+}
+
+.innerLR .k-grid-content .k-selectable .k-state-selected {
+    background: #cee5ff none repeat scroll 0 0 !important;
+    border-color: #fff;
+    color: #4a4a4a;
+}
+
+.k-grid table tr:hover {
+    background: #cee5ff;
+    cursor: pointer;
+}
+
+.k-grid-content > table > tbody > tr {
+    filter: Alpha(opacity=50);
+    border: 1px solid white;
+    color: #494949;
+    cursor: pointer;
+    transition: color 1s ease;
+    transition: background 0.6s ease;
+}
+.k-grid-content > table > tbody > .k-alt {
+    filter: Alpha(opacity=50); /* IE8 and earlier */
+}
+
+.k-grid table tr.k-state-selected {
+    background: #cee5ff;
+}

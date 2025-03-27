@@ -1,0 +1,59 @@
+﻿html
+{
+  /*background: #eedfcc url("../../Content/style/images/bg3.jpg") no-repeat scroll center top / cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;*/
+
+
+     background: url("../../Content/style/images/bg3.jpg") no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+
+}
+body {
+     background-color: transparent !important;
+   
+}
+
+.goToTop {
+    background-color: rgba(0, 0, 0, 0.65);
+    border: 3px solid #cdcdcd;
+    border-radius: 50px;
+    bottom: 60px;
+    color: #fff;
+    display: none;
+    height: 55px;
+    opacity: 0.85;
+    padding-top: 5px;
+    position: fixed;
+    right: 30px;
+    text-align: center;
+    text-decoration: none;
+    width: 55px;
+    z-index: 20;
+}
+
+    .goToTop i {
+        padding-right: 0;
+    }
+
+    .goToTop span {
+        display: block;
+        font-size: 10px;
+        line-height: 100%;
+        padding-top: 0;
+        width: 100%;
+    }
+
+    .goToTop:focus, .goToTop:hover {
+        opacity: 1;
+        text-decoration: none;
+        color: #ffd800;
+        border-color: #ffd800;
+        cursor: pointer;
+    }

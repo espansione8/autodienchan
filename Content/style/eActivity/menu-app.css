@@ -1,0 +1,89 @@
+﻿@media screen and (max-width: 1280px) {
+   .mnu-left
+   {
+       background:#ff0000;
+   }
+   .isCheckLogo
+   {
+       display:none !important;
+   }
+   .mnu-rightUser
+   {
+       display:inherit !important;
+   }
+    .mnu-right
+   {
+       display:inherit !important;
+   }
+  #menuRight
+  {
+      display:none !important;
+
+  }
+  .dropbtn {
+   background-color: #fff;
+    border: medium none;
+    color: #000;
+    cursor: pointer;
+    font-size: 14px;
+    padding: 9px;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+    color:#ff0000;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index:999999;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+}
+
+@media screen and (min-width: 1281px) {
+  
+   .isCheckLogo
+   {
+       display:inherit !important;
+   }
+   .mnu-rightUser
+   {
+       display:none !important;
+   }
+  
+   .mnu-right
+   {
+       display:none !important;
+   }
+    #menuRight
+  {
+      display:inherit !important;
+
+  }
+}
+

@@ -1,0 +1,153 @@
+﻿/* Smartphones (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 480px) {
+  /* Styles */
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen 
+and (min-width : 321px) {
+  /* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen 
+and (max-width : 320px) {
+  /* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) {
+  .btn-special
+  {
+      width:100%;
+  }
+  .sPadd0
+  {
+      padding:0 !important;
+  }
+  .spadding-top-5
+  {
+      padding-top:5px !important;
+  }
+  .sFull-width
+  {
+      width:100%;
+  }
+  .sbtn-width-50
+  {
+      width:50% !important;
+
+  }
+  .spading-top-30
+   {
+       padding-top:5px !important;
+   }
+  .padding-left-btnggroup
+  {
+      padding-left:0px !important;
+  }
+}
+
+
+@media only screen 
+and (min-device-width : 1366px) 
+and (max-device-width : 1366px) {
+  .btn-special
+  {
+      width:100%;
+  }
+  .sPadd0
+  {
+      padding:0 !important;
+  }
+  .spadding-top-5
+  {
+      padding-top:5px !important;
+  }
+  .sFull-width
+  {
+      width:100%;
+  }
+  .sbtn-width-50
+  {
+      width:50% !important;
+
+  }
+  .spading-top-30
+   {
+       padding-top:5px !important;
+   }
+  .padding-left-btnggroup
+  {
+      padding-left:0px !important;
+  }
+  .pl0
+  {
+      padding-left:0 !important;
+  }
+}
+
+
+/* iPads (landscape) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : landscape) {
+  /* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen 
+and (min-device-width : 768px) 
+and (max-device-width : 1024px) 
+and (orientation : portrait) {
+  /* Styles */
+}
+
+/* Desktops and laptops ----------- */
+@media only screen 
+and (min-width : 1224px) {
+   .spading-top-30
+   {
+       padding-top:30px !important;
+   }
+    .padding-left-btnggroup
+  {
+      padding-left:10px !important;
+  }
+}
+
+
+/* Large screens ----------- */
+@media only screen 
+and (min-width : 1824px) {
+   .spading-top-30
+   {
+       padding-top:30px !important;
+   }
+}
+
+/* iPhone 4 - 5s ----------- */
+@media
+only screen and (-webkit-min-device-pixel-ratio : 1.5),
+only screen and (min-device-pixel-ratio : 1.5) {
+  /* Styles */
+}
+
+/* iPhone 6 ----------- */
+@media
+only screen and (max-device-width: 667px) 
+only screen and (-webkit-device-pixel-ratio: 2) {
+  /* Styles */
+}
+
+/* iPhone 6+ ----------- */
+@media
+only screen and (min-device-width : 414px) 
+only screen and (-webkit-device-pixel-ratio: 3) {
+  /*** You've spent way too much on a phone ***/
+}

@@ -1,0 +1,1336 @@
+﻿
+.k-radio-label:before {
+    border: 1px solid #737373 !important;
+    content: "";
+    height: 20px !important;
+    left: -2px !important;
+    position: absolute !important;
+    top: -2px !important;
+    width: 20px !important;
+}
+
+.contentsub {
+    margin-top: 60px;
+    font-size: 18px;
+}
+
+.text_multi {
+    border: medium none;
+    /*margin-left: 30px;*/
+    width: 99%;
+}
+
+div.answer input {
+    border: medium none;
+    /*width: 96%;*/
+}
+
+.Show_error {
+    background: none repeat scroll 0 0 rgba(253, 115, 138, 0.3);
+    border: 1px solid rgba(253, 115, 138, 0.7);
+    border-radius: 4px;
+    color: #bd5856;
+    font-size: 15px;
+    font-weight: bold;
+    padding-top: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.inputcheck {
+    margin-top: 0 !important;
+    width: 35px;
+}
+
+.lableradio {
+    font-weight: bold;
+    padding-left: 25px;
+    text-align: center;
+}
+
+.martop {
+    margin-bottom: 10px;
+}
+
+.row_odd {
+    background: none repeat scroll 0 0 #BFEBF2;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.row_even {
+    background: none repeat scroll 0 0 #B2E7F0;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.row2_odd {
+    background: none repeat scroll 0 0 #FFEAD1;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.row2_even {
+    background: none repeat scroll 0 0 #FFE5C7;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.row3_odd {
+    background: none repeat scroll 0 0 #FFCBCB;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.row3_even {
+    background: none repeat scroll 0 0 #F6E5E5;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.row4_odd {
+    background: none repeat scroll 0 0 #FFD7BC;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.row4_even {
+    background: none repeat scroll 0 0 #fbe8cd;
+    border-bottom: 1px solid #fff;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+
+.pagename {
+    padding: 8px 30px 0 0;
+    text-align: right;
+}
+
+.navbar-brand {
+    float: left;
+    font-size: 18px;
+    line-height: 20px;
+    padding: 0 0 0 20px !important;
+}
+
+.e-footer {
+    border-top: 4px solid #b2e7f0;
+    color: #777777;
+    padding-bottom: 30px;
+    padding-top: 20px;
+}
+
+.copyrightinf {
+    text-align: center;
+    color: #000;
+}
+
+ol.myList {
+    list-style-type: decimal-leading-zero;
+}
+
+.navbar-inverse {
+    /*background: none repeat scroll 0 0 #242d3c !important;*/
+    background: linear-gradient(to bottom, rgba(36,45,60, 1) 0%, rgba(0, 0, 0, 1) 100%) repeat scroll 0 0 rgba(0, 0, 0, 0) !important;
+    color: #fff;
+}
+
+.content_bs {
+    clear: both;
+    margin: 70px auto 0;
+}
+
+.nameSub {
+    top: -10px;
+}
+
+    .nameSub p.name_skill {
+        background: none repeat scroll 0 0 #ffffff;
+        border-bottom: 3px solid #ffab4a;
+        color: #4f4f4f;
+        font-size: 40px;
+        font-family: 'Open Sans Condensed';
+        font-weight: bold;
+        padding-left: 215px;
+        margin-bottom: 0;
+        padding-bottom: 0;
+    }
+
+
+.padd0 {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.paddtopbottom {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.borderleft {
+    border-left: 1px solid #fff;
+}
+
+span.fontques {
+    font-weight: bold;
+}
+
+.navbar {
+    min-height: 65px;
+}
+
+.spanlarge {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.comp_title {
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+}
+
+    .comp_title p {
+        background: none repeat scroll 0 0 #23bedb;
+        color: #fff;
+        border-bottom: 2px solid #fff;
+        font-family: Open Sans Condensed;
+    }
+
+        .comp_title p.aboutu {
+            background: none repeat scroll 0 0 #63cdd6;
+            border-bottom: 2px solid #fff;
+            color: #fff;
+        }
+
+        .comp_title p.appointment {
+            background: none repeat scroll 0 0 #6aade2;
+            color: #fff;
+            border-bottom: 2px solid #fff;
+        }
+
+        .comp_title p.lfstyle {
+            background: none repeat scroll 0 0 #6FB5CC;
+            color: #fff;
+            border-bottom: 2px solid #fff;
+        }
+
+        .comp_title p.medical {
+            background: none repeat scroll 0 0 #9FCDB6;
+            color: #fff;
+            border-bottom: 2px solid #fff;
+        }
+
+.name_Sub p.exercise {
+    background: none repeat scroll 0 0 #FFAB4A;
+    border-bottom: 3px solid #ffab4a;
+    color: #4f4f4f;
+    font-size: 40px;
+    font-weight: bold;
+    padding-left: 215px;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    font-family: 'Open Sans Condensed';
+}
+
+span.spanlager {
+    font-size: 30px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.pagename a {
+    color: #fff;
+    font-size: 40px;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    font-weight: 900;
+}
+
+    .pagename a:hover {
+        text-decoration: none;
+    }
+
+.objgoal {
+    background: none repeat scroll 0 0 #b95f9c;
+    box-shadow: 0 40px 132px 70px rgba(0, 0, 0, 0.35) inset;
+    clear: both;
+    color: #fff;
+    display: block;
+    height: auto;
+    overflow: hidden;
+}
+
+.formtitle {
+    background: none repeat scroll 0 0 #c46aa7;
+    box-shadow: 5px 10px 55px 15px rgba(0, 0, 0, 0.35) inset;
+    clear: both;
+    color: #fff;
+    display: block;
+    height: auto;
+    overflow: hidden;
+}
+
+.content_sub p {
+    /*border-bottom: 1px solid #fff;*/
+    font-size: 18px;
+    padding-bottom: 15px;
+    padding-left: 30px;
+}
+
+.compomenttitle {
+    font-size: 35px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.effect5 {
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+
+.question p {
+    margin-bottom: 0;
+    margin-top: 15px;
+}
+
+.txt_input {
+    height: 35px;
+    width: 96%;
+    border: medium none;
+}
+
+.content_sub {
+    font-size: 15px;
+    margin-top: -10px;
+}
+
+.paddtop {
+    padding-top: 30px;
+}
+
+.showhidemobile {
+    display: none;
+}
+
+.fontboldmobie {
+    font-weight: normal;
+}
+
+.submit {
+    text-align: center;
+}
+
+    .submit > button {
+        background: none repeat scroll 0 0 rgba(255,165,0,1);
+        border-radius: 15px;
+        border: 2px solid #cdcdcd;
+        box-shadow: 5px 5px 10px 0 #777;
+        font-size: 22px;
+        font-weight: bold;
+        height: 65px;
+        width: 200px;
+        font-family: "Open Sans Condensed";
+    }
+
+        .submit > button:hover {
+            background: none repeat scroll 0 0 rgba(255,165,0,0.7);
+        }
+/*css for Question manager*/
+.subhead {
+    /*background: none repeat scroll 0 0 #efefef;*/
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.6);
+    border-bottom: 1px solid #fff;
+    margin: 0 0 18px;
+    min-height: 55px;
+    position: relative;
+    transition: box-shadow 0.3s ease-out 0s;
+}
+
+.editingSurvey {
+    float: right;
+}
+
+.acContent {
+    background: none repeat scroll 0 0 #9e9b90;
+    border-top: 1px solid transparent;
+    display: block;
+    position: relative;
+}
+
+.setting {
+    margin: 0 1.75% 5px 0;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+    .setting a:hover {
+        text-decoration: none;
+    }
+
+.addList {
+    list-style: outside none none;
+    margin: 0 0 16px;
+    padding: 0 2.75% 0 3.5%;
+}
+
+    .addList > li {
+        font-weight: normal;
+        margin: 0 0 3px;
+    }
+
+        .addList > li > a:before {
+            color: #fff;
+            font-family: "SMFont";
+            font-size: 22px;
+            font-weight: normal !important;
+            height: 34px;
+            line-height: 34px;
+            position: absolute;
+            right: 100%;
+            text-align: center;
+            top: 0;
+            width: 34px;
+        }
+
+        .addList > li:hover {
+            background: none repeat scroll 0 0 #fde79f;
+        }
+
+.qmc:before {
+    content: "l";
+}
+
+.addList > li > a:after {
+    clear: both;
+    content: " ";
+    display: table;
+}
+
+.titleAnswer {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: rgb(51, 51, 51);
+}
+
+.rowQues {
+    padding-top: 7px;
+    padding-bottom: 7px;
+}
+
+.btnAR {
+    border-radius: 80px;
+    color: #fff;
+    padding: 4px 5px 3px 7px;
+}
+
+.btnAdd {
+    background: #a7c23d;
+}
+
+.btnRemove {
+    background: #e8554c;
+    margin-left: 5px;
+}
+
+.choiceType {
+    width: 20px;
+    float: left;
+    padding-top: 10px;
+}
+
+.choiceActions {
+    float: left;
+    min-width: 60px;
+    padding: 5px 10px 5px 5px !important;
+    vertical-align: top;
+    width: 60px;
+}
+
+.choiceText {
+    float: left;
+}
+
+.iconli {
+    background: none repeat scroll 0 0 #4eb2b8;
+    border-radius: 5px 0 0 5px;
+    color: #fff;
+    font-size: 13px;
+    padding-bottom: 9px;
+    padding-top: 8px;
+    text-align: center;
+    top: -5px;
+    width: 30px !important;
+}
+
+.textspan {
+    padding-left: 5px;
+}
+
+.add {
+    background: none repeat scroll 0 0 #fff;
+    border: 1px solid #cdcdcd;
+    border-radius: 3px;
+    float: right;
+    font-size: 12px;
+    height: 10px;
+    margin-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.buttons {
+    float: right;
+    margin-top: 10px;
+}
+
+.listText {
+    color: #444;
+    font-size: 13px;
+    font-weight: bold;
+    padding-left: 10px;
+    position: relative;
+    top: -6px;
+}
+
+#panelbar .k-panelbar .k-state-focused .k-state-selected {
+    box-shadow: none !important;
+}
+
+#tabstripEditQues .k-tabstrip-items .k-state-default {
+    background: none repeat scroll 0 0 padding-box #706e65;
+    border: 1px solid #c5c5c5;
+    border-radius: 5px 5px 0 0;
+    margin-left: 5px;
+}
+
+#tabstripEditQues .k-tabstrip-items .k-state-active {
+    background: #fff;
+    border: 1px solid #fff;
+}
+
+    #tabstripEditQues .k-tabstrip-items .k-state-active .k-link {
+        color: #333;
+    }
+
+.pageEditSettings .k-tabstrip-items .k-state-default .k-link, .pageEditSettings .k-panelbar > li.k-state-default > .k-link {
+    color: #fff;
+    font-weight: 700;
+}
+
+.title-survey {
+    font-size: 34px;
+    font-weight: bold;
+}
+
+.pageEditSettings {
+    background: none repeat scroll 0 0 padding-box #ededed;
+    border-radius: 5px;
+    margin-left: -10px;
+    margin-right: 10px;
+    padding: 3px;
+    margin-top: 5px;
+}
+
+.editSurvey {
+    position: absolute;
+    z-index: 1;
+}
+
+.greeting_section {
+    background: none repeat scroll 0 0 #fff;
+    height: auto;
+    min-height: 100px;
+    margin-bottom: 15px;
+    padding: 10px;
+}
+
+    .greeting_section a {
+        color: #333;
+        text-decoration: none;
+    }
+
+.bgwhiteEdit {
+    background: none repeat scroll 0 0 #fff;
+    height: auto;
+    left: 0px;
+    position: absolute;
+}
+
+.editor_lblGroup_hover {
+    background: none repeat scroll 0 0 rgba(151, 222, 212, 0.3);
+    border: 1px dashed #87c7c9;
+    border-radius: 5px;
+}
+
+.lblGroup_option {
+    height: auto;
+    left: 0;
+    position: absolute;
+    top: -2px;
+    z-index: 1;
+}
+
+.showdialog {
+    background: none repeat scroll 0 0 rgba(248, 71, 100, 0.85);
+    z-index: 999;
+    padding-bottom: 15px;
+    padding-top: 15px;
+    position: fixed;
+    top: 0;
+}
+
+    .showdialog p {
+        color: #fff;
+        font-size: 16px;
+        text-align: center;
+    }
+
+.btn-booter {
+    text-align: right;
+    padding-top: 35px;
+    text-align: right;
+}
+
+    .btn-booter .btn {
+        width: 160px;
+        border-radius: 3px;
+        border-width: 0;
+        line-height: 13px;
+        padding: 17px 22px;
+        transition: all 0.2s ease-out 0s;
+    }
+
+.box_contenttab {
+    background: none repeat scroll 0 0 #fff !important;
+    border: medium none !important;
+    border-radius: 5px;
+    display: block;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+}
+
+.choice_Type {
+    float: left;
+    padding-top: 10px;
+    width: 20px;
+}
+
+.user-generated {
+    padding-left: 5px;
+}
+
+.bgContent_optionTab {
+    border: medium none !important;
+    border-radius: 5px;
+    height: auto;
+    margin-bottom: 10px !important;
+    margin-left: 10px !important;
+    margin-right: 5px;
+    margin-top: 10px !important;
+    padding-bottom: 10px !important;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 10px !important;
+}
+
+.bg_subcontent_optionTap {
+    background: none repeat scroll 0 0 rgb(234, 234, 232);
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+}
+
+.bgcfeae7 {
+    background: #cfeae7;
+}
+
+.check_option {
+    /*background: none repeat scroll 0 0 #cfeae7;*/
+    border-radius: 5px 5px 0 0;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-top: 5px;
+}
+
+.option_choise {
+    border-top: 1px solid #fff;
+    padding-left: 15px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.textareinput {
+    border: 1px solid #cdcdcd;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.question_display {
+    font-weight: normal;
+}
+
+.expander span {
+    display: block;
+    font-size: 11px;
+    padding: 2px 0 0 17px;
+}
+
+.spacing_input {
+    border: 1px solid #cdcdcd;
+    border-radius: 5px;
+    height: 30px;
+    padding-left: 15px;
+}
+
+.editor_Ques_hover {
+    background: none repeat scroll 0 0 rgba(151, 222, 212, 0.3);
+    border-radius: 5px;
+    border: 1px dashed #87c7c9;
+}
+
+.question_row {
+    padding: 10px;
+}
+
+.question_option .buttons a {
+    margin-right: 10px;
+    padding-left: 18px;
+    font-weight: bold;
+}
+
+    .question_option .buttons a span {
+        color: #fff;
+    }
+
+    .question_option .buttons a:hover span {
+        color: #333;
+    }
+
+a.edit-button {
+    background: none repeat scroll 0 0 #18c67f;
+    border: 1px solid #18c67f;
+    color: #fff;
+}
+
+a.option-button {
+    background: none repeat scroll 0 0 #5DC8CE;
+    border: 1px solid #5DC8CE;
+    color: #fff;
+}
+
+a.logic-button {
+    background: none repeat scroll 0 0 #6EC4DB;
+    border: 1px solid #6EC4DB;
+    color: #fff;
+}
+
+a.move-button {
+    background: none repeat scroll 0 0 #FFAA40;
+    border: 1px solid #FFAA40;
+    color: #fff;
+}
+
+a.copy-button {
+    background: none repeat scroll 0 0 #A74A83;
+    border: 1px solid #A74A83;
+    color: #fff;
+}
+
+a.delete-button {
+    background: none repeat scroll 0 0 #FD738A;
+    border: 1px solid #FD738A;
+    color: #fff;
+}
+/*css for button mobile*/
+.btn_on_off {
+    float: right;
+    font-size: 12px;
+    margin-right: 10px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.cmn-toggle {
+    position: absolute;
+    margin-left: -9999px;
+    visibility: hidden;
+}
+
+    .cmn-toggle + label {
+        display: block;
+        position: relative;
+        cursor: pointer;
+        outline: none;
+        user-select: none;
+    }
+
+input.cmn-toggle-round + label {
+    background-color: #fff;
+    border-radius: 60px;
+    height: 18px;
+    padding: 2px;
+    width: 40px;
+}
+
+    input.cmn-toggle-round + label:before,
+    input.cmn-toggle-round + label:after {
+        display: block;
+        position: absolute;
+        top: 1px;
+        left: 1px;
+        bottom: 1px;
+        content: "";
+    }
+
+    input.cmn-toggle-round + label:before {
+        right: 1px;
+        background-color: #f1f1f1;
+        border-radius: 60px;
+        transition: background 0.4s;
+    }
+
+    input.cmn-toggle-round + label:after {
+        background-color: #fff;
+        border-radius: 100%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        transition: margin 0.4s ease 0s;
+        width: 20px;
+    }
+
+input.cmn-toggle-round:checked + label:before {
+    background-color: #8ce196;
+}
+
+input.cmn-toggle-round:checked + label:after {
+    margin-left: 22px;
+}
+
+/*---flat----*/
+input.cmn-toggle-round-flat + label {
+    padding: 2px;
+    width: 40px;
+    height: 18px;
+    background-color: #dddddd;
+    border-radius: 60px;
+    transition: background 0.4s;
+}
+
+    input.cmn-toggle-round-flat + label:before,
+    input.cmn-toggle-round-flat + label:after {
+        display: block;
+        position: absolute;
+        content: "";
+    }
+
+    input.cmn-toggle-round-flat + label:before {
+        top: 2px;
+        left: 2px;
+        bottom: 2px;
+        right: 2px;
+        background-color: #fff;
+        border-radius: 60px;
+        transition: background 0.4s;
+    }
+
+    input.cmn-toggle-round-flat + label:after {
+        top: 4px;
+        left: 4px;
+        bottom: 4px;
+        width: 15px;
+        background-color: #dddddd;
+        border-radius: 100%;
+        transition: margin 0.4s, background 0.4s;
+    }
+
+input.cmn-toggle-round-flat:checked + label {
+    background-color: #8ce196;
+}
+
+    input.cmn-toggle-round-flat:checked + label:after {
+        margin-left: 22px;
+        background-color: #8ce196;
+    }
+/*end css for button mobile*/
+#organizer li a span.k-link {
+    background-color: transparent !important;
+    box-shadow: none;
+    color: #333;
+    font-family: Arial;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+#organizer .k-panelbar-expand, #organizer .k-panelbar-collapse {
+    margin-top: -8px;
+    position: absolute;
+    right: 20px !important;
+    top: 50%;
+}
+
+.tooltip_menu {
+    color: #f34764;
+    float: right;
+    margin-right: -10px;
+    padding-top: 8px;
+}
+
+.div_tooltip {
+    width: 195px;
+    color: #333;
+    height: auto;
+    min-height: 200px;
+    max-width: 200px;
+    overflow: auto;
+    padding: 5px;
+    font-size: 12px;
+    text-align: justify;
+}
+
+    .div_tooltip h5 {
+        font-weight: bold;
+        text-align: left;
+        text-transform: uppercase;
+    }
+
+    .div_tooltip .hint {
+        background: #e1ebf9;
+        padding: 5px;
+        margin: 0px;
+        border: 7px;
+        bottom: 0px;
+    }
+
+#organizer .tooltip.right .tooltip-inner {
+    background-color: #fff8dc;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    margin-top: 160px;
+    opacity: 1;
+    border-radius: 10px;
+    box-shadow: 1px 1px 12px rgba(0, 0, 0, 0.1);
+}
+
+#organizer .tooltip.right .tooltip-arrow {
+    border-right-color: #fff8dc;
+}
+
+.choiceText {
+    padding-left: 10px;
+}
+
+.box_subcontent {
+    background: none repeat scroll 0 0 #eaeae8;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.title_Settings {
+    background: none repeat scroll 0 0 #fff;
+    border-radius: 5px;
+    padding: 8px 10px;
+}
+
+#surveyTitleEditForm, #greetingEditForm, #TittleGroup_EditForm {
+    background: none repeat scroll 0 0 padding-box #8d4b72;
+    border: 1px solid #cdcdcd;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+    color: #333;
+    padding: 10px;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+}
+
+#page-header_option {
+    background: none repeat scroll 0 0 rgba(151, 222, 212, 0.3);
+    height: auto;
+    left: 0;
+    position: absolute;
+    top: -2px;
+    z-index: 1;
+}
+
+    #page-header_option .buttons {
+        float: right;
+    }
+
+.Group_ques {
+    padding-top: 10px;
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
+    padding-bottom: 10px;
+}
+
+.btnCreate_group {
+    font-weight: bold;
+    left: 15px;
+    margin-top: 5px;
+}
+
+    .btnCreate_group a:hover {
+        background: #23bedb;
+        border: #23bedb;
+    }
+
+    .btnCreate_group a span {
+        color: #fff;
+    }
+
+.ContentQues {
+    padding-top: 10px;
+}
+
+.pageSubtitleLabel {
+    color: #333;
+    font-size: 13px;
+    font-weight: bold;
+    padding-left: 10px;
+}
+
+.name_group {
+    background: #cdcdcd;
+}
+
+    .name_group lable h4 {
+        color: #fff !important;
+    }
+
+.survey-page .survey-page-body {
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 1);
+    height: auto;
+    min-height: auto;
+    /*padding: 15px 20px 0;*/
+    position: relative;
+}
+
+#aboutyou, #appofday {
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.subpage-header {
+    display: table;
+    height: auto;
+    padding-right: 50px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 999;
+}
+
+.editGreeting {
+    height: auto;
+    position: absolute;
+    top: 50px;
+    z-index: 1;
+    padding-right: 50px;
+}
+
+    .editGreeting .buttons a, .subpage-header .buttons a {
+        font-weight: bold;
+        margin-right: 10px;
+        padding-left: 18px;
+    }
+
+        .editGreeting .buttons a span, .subpage-header .buttons a span {
+            color: #fff;
+        }
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .content_bs {
+        clear: both;
+        margin: 65px auto 0;
+    }
+
+    .fontboldmobie {
+        font-weight: bold;
+    }
+
+    .showhidemobile {
+        display: block;
+        text-align: center;
+        font-weight: normal;
+    }
+
+    .submit > button {
+        background: none repeat scroll 0 0 rgba(255, 165, 0, 1);
+        border: 2px solid #cdcdcd;
+        border-radius: 20px;
+        box-shadow: 5px 5px 10px 0 #777;
+        font-family: "Open Sans Condensed";
+        font-size: 18px;
+        font-weight: bold;
+        height: 38px;
+        width: 200px;
+    }
+
+    .text_multi {
+        border: medium none;
+        margin-left: 5px;
+        width: 95%;
+    }
+
+    .compomenttitle {
+        font-size: 19px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .contentsub {
+        font-size: 15px;
+        margin-top: 30px;
+    }
+
+    .content_sub {
+        font-size: 15px;
+        margin-top: -10px;
+        margin-bottom: 10px;
+    }
+
+    .objgoal {
+        background: none repeat scroll 0 0 #b95f9c;
+        box-shadow: 0 40px 132px 70px rgba(0, 0, 0, 0.35) inset;
+        clear: both;
+        color: #fff;
+        display: block;
+        height: auto;
+        overflow: hidden;
+        padding-bottom: 10px;
+    }
+
+    .comp_title {
+        font-size: 19px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+        .comp_title p {
+            background: none repeat scroll 0 0 #23bedb;
+            color: #fff;
+            padding-bottom: 5px;
+            padding-top: 5px;
+            text-shadow: 2px 2px 5px rgba(22, 22, 22, 0.35);
+        }
+
+    .nameSub p.name_skill {
+        background: none repeat scroll 0 0 #ffffff;
+        border-bottom: 3px solid #ffab4a;
+        color: #4f4f4f;
+        font-size: 21px;
+        font-weight: bold;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        padding-left: 0px;
+        text-align: center;
+        text-shadow: 2px 2px 5px rgba(22, 22, 22, 0.35);
+    }
+
+    .name_Sub p.exercise {
+        background: none repeat scroll 0 0 #ffab4a;
+        border-bottom: 3px solid #ffab4a;
+        color: #4f4f4f;
+        font-size: 21px;
+        font-weight: bold;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        padding-left: 0px;
+        text-align: center;
+        text-shadow: 2px 2px 5px rgba(22, 22, 22, 0.35);
+    }
+
+    label {
+        font-size: 14px;
+    }
+
+    .e-footer {
+        border-top: 4px solid #b2e7f0;
+        color: #777777;
+        padding-bottom: 30px;
+        padding-top: 5px;
+    }
+
+    .pagename {
+        padding: 10px 5px 0 0;
+        text-align: center;
+    }
+
+        .pagename a {
+            color: #ffab4a;
+            font-size: 14px;
+            font-weight: 900;
+            padding-top: 16px;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+        }
+
+    .navbar-brand {
+        padding: 5px !important;
+    }
+
+        .navbar-brand img {
+            width: 90%;
+        }
+
+    .content_sub p {
+        border-bottom: medium none;
+        font-size: 14px;
+        margin-bottom: 0;
+        padding-bottom: 3px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .row_odd, .row_even, .row2_odd, .row2_even {
+        padding-left: 15px;
+    }
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width : 321px) {
+    /* Styles */
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width : 320px) {
+    /* Styles */
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    .navbar-brand img {
+        width: 98%;
+    }
+
+    .compomenttitle {
+        font-size: 28px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    .content_sub p {
+        padding-right: 25px;
+        font-size: 16px;
+    }
+
+    .pagename {
+        padding: 15px 30px 0 0;
+        text-align: right;
+    }
+
+        .pagename a {
+            color: #fac913;
+            font-size: 26px;
+            font-weight: 900;
+            text-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+        }
+
+    .content_bs {
+        clear: both;
+        margin: 65px auto 0;
+    }
+
+    .contentsub {
+        font-size: 18px;
+        margin-top: 40px;
+    }
+
+    .pagename {
+        padding: 15px 30px 0 0;
+        text-align: right;
+    }
+
+    .comp_title {
+        font-size: 27px;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    label {
+        font-size: 15px;
+    }
+
+    .nameSub p.name_skill {
+        background: none repeat scroll 0 0 #ffffff;
+        border-bottom: 3px solid #ffab4a;
+        color: #4f4f4f;
+        font-size: 27px;
+        font-weight: bold;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        padding-left: 40px;
+    }
+
+    .name_Sub p.exercise {
+        background: none repeat scroll 0 0 #ffab4a;
+        border-bottom: 3px solid #ffab4a;
+        color: #4f4f4f;
+        font-size: 27px;
+        font-weight: bold;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        padding-left: 40px;
+    }
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+    /* Styles */
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+    /* Styles */
+}
+
+@media only screen and (min-device-width : 1025px) and (max-device-width : 1280px) {
+    .nameSub p.name_skill {
+        background: none repeat scroll 0 0 #ffffff;
+        border-bottom: 3px solid #ffab4a;
+        color: #4f4f4f;
+        font-size: 40px;
+        font-weight: bold;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        padding-left: 15px;
+    }
+
+    .name_Sub p.exercise {
+        background: none repeat scroll 0 0 #ffab4a;
+        border-bottom: 3px solid #ffab4a;
+        color: #4f4f4f;
+        font-size: 40px;
+        font-weight: bold;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        padding-left: 15px;
+    }
+
+    .content_sub p {
+        padding-right: 25px;
+    }
+}
+/* Desktops and laptops ----------- */
+@media only screen and (min-width : 1224px) {
+}
+
+/* Large screens ----------- */
+@media only screen and (min-width : 1824px) {
+    /* Styles */
+}
+
+/* iPhone 4 ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio : 1.5), only screen and (min-device-pixel-ratio : 1.5) {
+    /* Styles */
+}

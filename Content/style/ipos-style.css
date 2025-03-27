@@ -1,0 +1,224 @@
+﻿.t-info-1 {
+    background: #eb525d none repeat scroll 0 0 !important;
+    color: #fff;
+}
+
+.t-info-2 {
+    background: #30bb74 none repeat scroll 0 0 !important;
+    color: #fff;
+}
+
+.t-info-3 {
+    background: #49c0e7 none repeat scroll 0 0 !important;
+    color: #fff;
+}
+
+.t-info-4 {
+    background: #2196f3 none repeat scroll 0 0 !important;
+    color: #fff;
+}
+
+.t-info-5 {
+    background: #8cb11f none repeat scroll 0 0 !important;
+    color: #fff;
+}
+
+.t-info-6 {
+    background: #aa36cc none repeat scroll 0 0 !important;
+    color: #fff;
+}
+
+.widget-info {
+    background: #fff none repeat scroll 0 0;
+}
+
+.widget-info {
+    border-radius: 2px;
+    overflow: hidden;
+    position: relative;
+}
+
+.t-info-1 hr {
+    border-color: #fff;
+}
+
+.widget-info .widget-info-details h4 {
+    color: white;
+    font-size: 15px;
+    margin: 5px;
+    padding-top: 10px;
+    text-align: center;
+}
+
+.widget-info .widget-info-details hr {
+    margin: 5px 0;
+}
+
+.widget-info .widget-info-details {
+    padding: 0 10px;
+}
+
+
+
+.move-list {
+    cursor: pointer;
+}
+
+.td-cols {
+    text-align: center;
+    width: 282px;
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+    background-color: none !important;
+}
+
+.table-hover > tbody > tr:hover > td, .table-hover > tbody > tr:hover > th {
+    background-color: #eaeaea !important;
+}
+
+.table-bordered thead tr, .table-bordered tfoot tr {
+    background-color: #efefef !important;
+}
+
+.profile-box.content-box .content-box-header {
+    height: auto;
+    line-height: 1.6em;
+    padding: 15px !important;
+}
+
+.content-box, .content-box-header {
+    border-width: 1px;
+    position: relative;
+}
+
+.content-box {
+    background: #fff none repeat scroll 0 0;
+    margin-bottom: 20px;
+}
+
+.profile-box .content-box-header .user-details {
+    font-size: 16px;
+    overflow: hidden;
+    padding-top: 5px;
+    position: relative;
+}
+
+.profile-box.content-box .content-box-header {
+    line-height: 1.6em;
+}
+
+.content-box-header {
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.profile-box ul.list-group {
+    margin: 10px 0;
+}
+
+.list-group {
+    list-style: outside none none;
+    margin-top: 0;
+    padding: 0;
+}
+
+.form-row, .row {
+    box-sizing: border-box;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.badge-success, .bg-green, .bootstrap-switch-success, .btn-success, .checkbox-success div[id^="uniform-"] span.checked, .hover-green:hover, .hover-success:hover, .label-success, .progress-bar-success, .radio-success div[id^="uniform-"] span.checked {
+    background: #4caf50 none repeat scroll 0 0;
+    border-color: #3fa243;
+    color: #fff;
+}
+
+.content-box, .content-box-header {
+    border-color: rgba(158, 173, 195, 0.16);
+    border-radius: 3px;
+    position: relative;
+}
+
+.profile-box.content-box .content-box-header {
+    height: auto;
+    line-height: 1.6em;
+    padding: 15px !important;
+}
+
+
+.content-box {
+    background: #fff none repeat scroll 0 0;
+    margin-bottom: 0px;
+}
+
+    .btn-group-vertical > .btn:first-child, .content-box .content-box-header, .list-group-item:first-child, .nav-list li:first-child a, .notifications-box li:first-child, .panel-heading, .panel > .list-group:first-child .list-group-item:first-child, .popover-title, .post-box textarea, .pricing-title, .tile-header, .ui-datepicker-header, .ui-datepicker-title, .ui-dialog .ui-dialog-titlebar, .ui-tabs-nav, .ui-tabs-nav li > a {
+        border-top-left-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+
+.btn-function {
+    -moz-user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857;
+    margin-bottom: 0;
+    padding: 21px 74px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.payment-title {
+    margin-bottom: 10px !important;
+    margin-top: 15px !important;
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+    background-color: #fff !important;
+}
+
+.modal.in .modal-dialog {
+    transform: translate(0px, 35px);
+}
+
+.title-split {
+    background: #d9534f;
+    color: white;
+    border-radius: 3px 3px 0 0;
+}
+
+.title-merge {
+    background: #f0ad4e;
+    color: white;
+    border-radius: 3px 3px 0 0;
+}
+
+.title-void {
+    background: #5bc0de;
+    color: white;
+    border-radius: 3px 3px 0 0;
+}
+
+.modal-xl {
+    width: 1024px;
+}
+/*a {
+        color: #fff !important;
+        outline: 0 none !important;
+    }*/
+
+#gdMembershipModal a {
+    color: #000 !important;
+}
+
+.pagination a {
+    color: #000 !important;
+}
